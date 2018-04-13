@@ -1,0 +1,74 @@
+baseURL = "https://errlogs.com/"
+contentDir = "content"
+publishDir = "public"
+layoutDir = "layouts"
+languageCode = "zh-CN"
+defaultContentLanguage = "zh-CN"
+title = "Error Logs"
+enableRobotsTXT = true
+enableEmoji = true
+theme = "even"
+
+hasCJKLanguage = true
+paginate = 5
+disqusShortname = "errlogs"
+googleAnalytics = "UA-97403777-2"
+
+[author]
+  name = "Razon Yang"
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[[menu.main]]
+  name = "主页"
+  weight = 10
+  identifier = "home"
+  url = "/"
+[[menu.main]]
+  name = "归档"
+  weight = 20
+  identifier = "archives"
+  url = "/post/"
+[[menu.main]]
+  name = "标签"
+  weight = 30
+  identifier = "tags"
+  url = "/tags/"
+[[menu.main]]
+  name = "分类"
+  weight = 40
+  identifier = "categories"
+  url = "/categories/"
+
+[params]
+  since = "2016"
+
+  logoTitle = "Error Logs"
+  keywords = []
+  description = ""
+
+  archive-paginate = 10
+
+  dateFormatToUse = "2006-01-02"
+
+  moreMeta = true
+
+  toc = true
+  fancybox = true
+  mathjax = true
+
+  [params.publicCDN]
+    enable = false
+    jquery = '<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>'
+    slideout = '<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>'
+    fancyboxJs = '<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>'
+    fancyboxCss = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">'
+
+  [params.social]
+    a-email = "mailto:razonyang@gmail.com"
+    b-stack-overflow = "https://stackoverflow.com/users/7377118/razon-yang"
+    c-twitter = "https://twitter.com/razonyang"
+    g-github = "https://github.com/razonyang"
