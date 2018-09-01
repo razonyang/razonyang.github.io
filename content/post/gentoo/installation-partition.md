@@ -1,7 +1,6 @@
 ---
 title: "Gentoo 安装教程 - 分区"
 date: 2018-05-18T17:46:54+08:00
-draft: true
 comment: true
 tags: ["gentoo", "disk", "partition"]
 categories: ["development"]
