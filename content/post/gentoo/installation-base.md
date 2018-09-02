@@ -1,7 +1,6 @@
 ---
 title: "Gentoo 安装教程 - 安装基本系统"
 date: 2018-09-01T22:51:41+08:00
-draft: true
 comment: true
 tags: ["gentoo"]
 categories: ["gentoo"]
