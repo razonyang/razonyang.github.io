@@ -1,7 +1,6 @@
 ---
 title: "Github 开启短信双重验证"
 date: 2018-09-02T11:58:09+08:00
-draft: true
 comment: true
 tags: ["github"]
 categories: ["github"]
