@@ -1,9 +1,10 @@
 ---
 title: "Gentoo 安装 Fcitx 中文输入法"
-date: 2018-09-24T10:57:23+08:00
+nate: 2018-09-24T10:57:23+08:00
+lastmod: 2018-09-24T12:06:23+08:00
 comment: true
 tags: ["Gentoo", "fcitx"]
-categories: ["development"]
+categories: ["gentoo"]
 ---
 
 安装 Gentoo 系统后，输入法基本是最重要的软件之一了，本篇将介绍在 Gentoo 下如何安装 Fcitx 输入法。

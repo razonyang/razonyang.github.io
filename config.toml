@@ -52,7 +52,7 @@ googleAnalytics = "UA-97403777-2"
 
   archive-paginate = 10
 
-  dateFormatToUse = "2006-01-02"
+  dateFormatToUse = "2006-01-02 15:04"
 
   moreMeta = true
 
