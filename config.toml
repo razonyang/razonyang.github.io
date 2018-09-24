@@ -1,4 +1,4 @@
-baseURL = "https://blog.errlogs.com/"
+baseURL = "https://errlogs.com/"
 contentDir = "content"
 publishDir = "public"
 layoutDir = "layouts"
