@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Php on Error Logs</title>
+    <link>https://errlogs.com/tags/php/</link>
+    <description>Recent content in Php on Error Logs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 24 Sep 2018 10:02:02 +0800</lastBuildDate>
+    
+	<atom:link href="https://errlogs.com/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CentOS 编译安装 PHP</title>
+      <link>https://errlogs.com/post/centos/php-compile/</link>
+      <pubDate>Mon, 24 Sep 2018 10:02:02 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/centos/php-compile/</guid>
+      <description>&lt;p&gt;由于 pthreads 要求 PHP 的版本是线程安全的，但 CentOS 装的都是非线程安全（NTS）的版本，于是笔者打算编译安装 PHP。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gentoo 安装多个版本 PHP</title>
+      <link>https://errlogs.com/post/gentoo/php/</link>
+      <pubDate>Sun, 29 Jul 2018 18:35:54 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/gentoo/php/</guid>
+      <description>&lt;p&gt;本文将简述如何在 Gentoo 中安装 PHP。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CentOS 安装或升级到 PHP7</title>
+      <link>https://errlogs.com/post/linux/centos-install-or-upgrade-to-php7/</link>
+      <pubDate>Mon, 16 Apr 2018 13:10:26 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/linux/centos-install-or-upgrade-to-php7/</guid>
+      <description>&lt;p&gt;CentOS 官方仓库的 PHP 版本是 5.4，但此版本已经不再被官方支持，考虑到安全问题和更好的性能，我们有必要安装或升级更高版本的 PHP，比如最新的 7.2。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PHP 获取 URL 信息</title>
+      <link>https://errlogs.com/post/php/retrieve-info-from-url/</link>
+      <pubDate>Tue, 21 Nov 2017 17:33:40 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/php/retrieve-info-from-url/</guid>
+      <description>&lt;p&gt;本文将阐述如何用PHP以正确的姿势获取URL的信息，并将其封装成类，方便复用。
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

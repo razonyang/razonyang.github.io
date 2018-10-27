@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vi on Error Logs</title>
+    <link>https://errlogs.com/tags/vi/</link>
+    <description>Recent content in Vi on Error Logs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 29 Dec 2017 15:28:18 +0800</lastBuildDate>
+    
+	<atom:link href="https://errlogs.com/tags/vi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Vim 快速入门</title>
+      <link>https://errlogs.com/post/vi/vim-primer/</link>
+      <pubDate>Fri, 29 Dec 2017 15:28:18 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/vi/vim-primer/</guid>
+      <description>&lt;p&gt;如题所示，本文为&lt;code&gt;Vim&lt;/code&gt;入门教程，文章涵盖&lt;code&gt;Vim&lt;/code&gt;基本的操作：插入、替换、删除、搜索、修改、撤销、重做等等，以及笔者个人的理解和说明。
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

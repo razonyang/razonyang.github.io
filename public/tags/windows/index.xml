@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on Error Logs</title>
+    <link>https://errlogs.com/tags/windows/</link>
+    <description>Recent content in Windows on Error Logs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 29 Jul 2018 00:14:55 +0800</lastBuildDate>
+    
+	<atom:link href="https://errlogs.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gentoo 和 Windows 双系统启动</title>
+      <link>https://errlogs.com/post/gentoo/dual-boot-with-windows/</link>
+      <pubDate>Sun, 29 Jul 2018 00:14:55 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/gentoo/dual-boot-with-windows/</guid>
+      <description>&lt;p&gt;笔者平常使用 Gentoo 办公，但是在娱乐游戏方面，Windows 系统必不可少。
+但是在安装完 Gentoo 后，并没有 Windows 系统的启动项。
+本文将介绍如何设别和添加 Windows 系统的启动项。
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

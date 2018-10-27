@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shadowsocks on Error Logs</title>
+    <link>https://errlogs.com/tags/shadowsocks/</link>
+    <description>Recent content in Shadowsocks on Error Logs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 26 Oct 2018 13:18:29 +0800</lastBuildDate>
+    
+	<atom:link href="https://errlogs.com/tags/shadowsocks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CentOS 7 安装 ShadowSocks</title>
+      <link>https://errlogs.com/post/centos/shadowsocks/</link>
+      <pubDate>Fri, 26 Oct 2018 13:18:29 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/centos/shadowsocks/</guid>
+      <description>&lt;p&gt;CentOS 7 安装 ShadowSocks
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gentoo 安装 Shadowsocks 进行科学上网</title>
+      <link>https://errlogs.com/post/gentoo/shadowsocks/</link>
+      <pubDate>Thu, 24 May 2018 19:01:52 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/gentoo/shadowsocks/</guid>
+      <description>&lt;p&gt;相信不少童鞋都是自己搭 Shadowsocks 进行科学上网的，正好笔者正在将服务器系统由 CentOS 转成 Gentoo，顺便分享下如何在 Gentoo 下安装 Shadowsocks 进行科学上网。
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

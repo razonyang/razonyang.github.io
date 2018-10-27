@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>PHP 获取 URL 信息 - Error Logs</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Razon Yang" />
+  <meta name="description" content="本文将阐述如何用PHP以正确的姿势获取URL的信息，并将其封装成类，方便复用。 " />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.50-DEV" />
+
+
+<link rel="canonical" href="https://errlogs.com/post/php/retrieve-info-from-url/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.6.6" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="PHP 获取 URL 信息" />
+<meta property="og:description" content="本文将阐述如何用PHP以正确的姿势获取URL的信息，并将其封装成类，方便复用。
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://errlogs.com/post/php/retrieve-info-from-url/" /><meta property="article:published_time" content="2017-11-21T17:33:40&#43;08:00"/>
+<meta property="article:modified_time" content="2017-11-21T17:33:40&#43;08:00"/>
+
+<meta itemprop="name" content="PHP 获取 URL 信息">
+<meta itemprop="description" content="本文将阐述如何用PHP以正确的姿势获取URL的信息，并将其封装成类，方便复用。
+">
+
+
+<meta itemprop="datePublished" content="2017-11-21T17:33:40&#43;08:00" />
+<meta itemprop="dateModified" content="2017-11-21T17:33:40&#43;08:00" />
+<meta itemprop="wordCount" content="1003">
+
+
+
+<meta itemprop="keywords" content="php,parse_url,parse_str,url," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PHP 获取 URL 信息"/>
+<meta name="twitter:description" content="本文将阐述如何用PHP以正确的姿势获取URL的信息，并将其封装成类，方便复用。
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Error Logs</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Error Logs</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">PHP 获取 URL 信息</h1>
+
+      <div class="post-meta">
+        <span class="post-time">Created at 2017-11-21 17:33 </span>
+	<span class="post-time">Updated at 2017-11-21 17:33 </span>
+        <div class="post-category">
+            
+              <a href="/categories/development/"> development </a>
+            
+          </div>
+        <span class="more-meta"> 约 1003 字 </span>
+        <span class="more-meta"> 预计阅读 3 分钟 </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+<ul>
+<li><a href="#url">URL</a></li>
+<li><a href="#函数">函数</a>
+<ul>
+<li><a href="#parse-url">parse_url</a></li>
+<li><a href="#parse-str">parse_str</a></li>
+<li><a href="#实现">实现</a></li>
+</ul></li>
+<li><a href="#class">Class</a></li>
+</ul>
+</nav>
+    </div>
+
+    
+</div>
+
+    
+    <div class="post-content">
+      <p>本文将阐述如何用PHP以正确的姿势获取URL的信息，并将其封装成类，方便复用。
+</p>
+
+<h1 id="url">URL</h1>
+
+<p>首先来了解一下URL的文法：</p>
+
+<pre><code>scheme:[//[user[:password]@]host[:port]][/path][?query][#fragment]
+</code></pre>
+
+<blockquote>
+<p>中括号表示的是可选项。</p>
+</blockquote>
+
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Explanation</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">scheme</td>
+<td align="left">传输协议</td>
+</tr>
+
+<tr>
+<td align="left">user, password</td>
+<td align="left">访问资源需要的凭证信息</td>
+</tr>
+
+<tr>
+<td align="left">host</td>
+<td align="left">服务器</td>
+</tr>
+
+<tr>
+<td align="left">port</td>
+<td align="left">端口</td>
+</tr>
+
+<tr>
+<td align="left">path</td>
+<td align="left">路径</td>
+</tr>
+
+<tr>
+<td align="left">query</td>
+<td align="left">查询</td>
+</tr>
+
+<tr>
+<td align="left">fragment</td>
+<td align="left">片段</td>
+</tr>
+</tbody>
+</table>
+
+
+<img
+    src="/img/emoji/for-example.jpeg"
+    title="for-example"
+    alt="for-example"
+    
+    
+/>
+
+<pre><code>                    hierarchical part
+        ┌───────────────────┴─────────────────────┐
+                    authority               path
+        ┌───────────────┴───────────────┐┌───┴────┐
+  abc://username:password@example.com:123/path/data?key=value&amp;key2=value2#fragid1
+  └┬┘   └───────┬───────┘ └────┬────┘ └┬┘           └─────────┬─────────┘ └──┬──┘
+scheme  user information     host     port                  query         fragment
+
+  urn:example:mammal:monotreme:echidna
+  └┬┘ └──────────────┬───────────────┘
+scheme              path
+</code></pre>
+
+<h1 id="函数">函数</h1>
+
+<p>在了解URL的文法之后，我们很容易编写函数去获取URL的信息，但是本文并不打算编写独立的函数，
+因为PHP已经提供了内置的函数 <code>parse_url</code> 和 <code>parse_str</code> 来实现这一目的。</p>
+
+<h2 id="parse-url">parse_url</h2>
+
+<pre><code>mixed parse_url ( string $url [, int $component = -1 ] )
+</code></pre>
+
+<p><code>parse_url</code> 解析一个URL，并返回一个包含URL各种组成部分的关联数组（键名和URL文法中的一致，比如：<code>scheme</code>、<code>host</code>、<code>port</code>等）。</p>
+
+<p>当指定了第二个参数 <code>component</code>，则会返回指定组成部分的值，此时返回的是字符串或者数值（<code>PHP_URL_PORT</code>）。</p>
+
+<p>官方文档：<a href="https://secure.php.net/manual/zh/function.parse-url.php">https://secure.php.net/manual/zh/function.parse-url.php</a></p>
+
+<h2 id="parse-str">parse_str</h2>
+
+<pre><code>void parse_str ( string $encoded_string [, array &amp;$result ] )
+</code></pre>
+
+<p><code>parse_str</code> 将字符串解析成多个变量，第二个参数 <code>$result</code> 用于存储变量的键值。</p>
+
+<p>这里有点小疑惑，因为可以看到 <code>$result</code> 是可选的，且该函数没有返回值，如果不设置 <code>$result</code>，那么这函数的意义是什么呢？</p>
+
+<p>不过官方文档也标注了：极度不建议不设置 <code>$result</code> 的情况下使用该函数，并且在 PHP 7.2 中将废弃不设置参数的行为。</p>
+
+<p>官方文档：<a href="https://secure.php.net/manual/zh/function.parse-str.php">https://secure.php.net/manual/zh/function.parse-str.php</a></p>
+
+<h2 id="实现">实现</h2>
+
+<p>通过上述的 <code>parse_url</code> 和 <code>parse_str</code> 函数，可以轻松的获取URL的信息：</p>
+
+<pre><code>// URL
+$url = 'https://example.com/user?name=foo';
+
+// 获取URL组成部分
+$components = parse_url($url);
+print_r($components);
+
+// 获取查询字符串
+$query = isset($components['query']) ? $components['query'] : '';
+print_r($query);
+
+// 获取查询参数数组
+parse_str($query, $params);
+print_r($params);
+</code></pre>
+
+<p>输出</p>
+
+<pre><code>Array
+(
+    [scheme] =&gt; https
+    [host] =&gt; example.com
+    [path] =&gt; /user
+    [query] =&gt; name=foo
+)
+
+name=foo
+
+Array
+(
+    [name] =&gt; foo
+)
+</code></pre>
+
+<h1 id="class">Class</h1>
+
+<p>最后，将此封装成类，方便复用。</p>
+
+<pre><code class="language-php">/**
+ * Class URL
+ *
+ * @property string|null scheme
+ *
+ * @property string|null user
+ *
+ * @property string|null pass
+ *
+ * @property string|null host
+ *
+ * @property integer|null port
+ *
+ * @property string|null path
+ *
+ * @property string|null query
+ *
+ * @property string|null fragment
+ */
+class URL
+{
+    private $data;
+
+    private $queryParams;
+
+    public function __construct($url)
+    {
+        $this-&gt;data = parse_url($url);
+        if ($this-&gt;data === false) {
+            throw new \InvalidArgumentException(&quot;invalid url: {$url}&quot;);
+        }
+    }
+
+    public function __get($name)
+    {
+        return isset($this-&gt;data[$name]) ? $this-&gt;data[$name] : null;
+    }
+
+    public function getQueryParams()
+    {
+        if ($this-&gt;queryParams === null) {
+            $query = $this-&gt;query;
+            if (empty($query)) {
+                $this-&gt;queryParams = [];
+            } else {
+                parse_str($query, $this-&gt;queryParams);
+            }
+        }
+
+        return $this-&gt;queryParams;
+    }
+}
+</code></pre>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/php/">php</a>
+          
+          <a href="/tags/parse_url/">parse_url</a>
+          
+          <a href="/tags/parse_str/">parse_str</a>
+          
+          <a href="/tags/url/">url</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/hugo/markdown-embed-partial/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Hugo Markdown 里嵌入局部模板</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/differences-between-uri-and-url-and-urn/">
+            <span class="next-text nav-default">URI、URL 和 URN 之间的关系</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+
+      
+
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'errlogs';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com/" class="dsq-brlink" target="_blank">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:razonyang@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/7377118/razon-yang" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/razonyang" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/razonyang" class="iconfont icon-github" title="github"></a>
+  <a href="https://errlogs.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="copyright-year">
+    &copy; 
+    
+      2016 - 
+    2018
+    <span class="author">Razon Yang</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.6.6"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-97403777-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Database on Error Logs</title>
+    <link>https://errlogs.com/tags/database/</link>
+    <description>Recent content in Database on Error Logs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 13 Jul 2017 20:18:25 +0800</lastBuildDate>
+    
+	<atom:link href="https://errlogs.com/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Leetcode 数据库面试题 - Not Boring Movies</title>
+      <link>https://errlogs.com/post/leetcode/database/not-boring-movies/</link>
+      <pubDate>Thu, 13 Jul 2017 20:18:25 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/database/not-boring-movies/</guid>
+      <description>&lt;p&gt;某城市新开了一家影院，不少人很喜欢去这家影院。该影院也张贴了关于的电影的评级和描述的海报。&lt;/p&gt;
+
+&lt;p&gt;请写出一条 SQL，返回 id 为奇数，且 description 不是 &amp;ldquo;boring&amp;rdquo; 的电影，并按 rating 降序。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 数据库面试题 - Big Countries</title>
+      <link>https://errlogs.com/post/leetcode/database/big-countries/</link>
+      <pubDate>Thu, 13 Jul 2017 19:13:07 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/database/big-countries/</guid>
+      <description>&lt;p&gt;若一个国家的面积大于300万平方公里，或者人口大于2500万，则可以称之为大国。&lt;/p&gt;
+
+&lt;p&gt;请编写一条 SQL 返回所有大国的 name, population, area。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 数据库面试题 - Swap Salary</title>
+      <link>https://errlogs.com/post/leetcode/database/swap-salary/</link>
+      <pubDate>Thu, 13 Jul 2017 12:43:54 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/database/swap-salary/</guid>
+      <description>&lt;p&gt;用一条 UPDATE 语句，在不使用中间临时表的情况下，将 salary 表中 sex 的值反转。
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

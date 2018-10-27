@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Leetcode 算法题 - Find The Difference - Error Logs</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Razon Yang" />
+  <meta name="description" content="给定两个只包含小写字母的字符串 s 和 t，其中字符串 t 是由字符串 s 乱序后，再在随机位置添加一个字母而成，请找到该随机添加的字母。
+例如：s = &amp;ldquo;abcd&amp;rdquo;, t = &amp;ldquo;abcde&amp;rdquo;, 其中 &amp;ldquo;e&amp;rdquo; 是随机添加的字母。 " />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.50-DEV" />
+
+
+<link rel="canonical" href="https://errlogs.com/post/leetcode/algorithm/find-the-difference/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.6.6" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="Leetcode 算法题 - Find The Difference" />
+<meta property="og:description" content="给定两个只包含小写字母的字符串 s 和 t，其中字符串 t 是由字符串 s 乱序后，再在随机位置添加一个字母而成，请找到该随机添加的字母。
+
+例如：s = &ldquo;abcd&rdquo;, t = &ldquo;abcde&rdquo;, 其中 &ldquo;e&rdquo; 是随机添加的字母。
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://errlogs.com/post/leetcode/algorithm/find-the-difference/" /><meta property="article:published_time" content="2017-07-13T07:31:38&#43;08:00"/>
+<meta property="article:modified_time" content="2017-07-13T07:31:38&#43;08:00"/>
+
+<meta itemprop="name" content="Leetcode 算法题 - Find The Difference">
+<meta itemprop="description" content="给定两个只包含小写字母的字符串 s 和 t，其中字符串 t 是由字符串 s 乱序后，再在随机位置添加一个字母而成，请找到该随机添加的字母。
+
+例如：s = &ldquo;abcd&rdquo;, t = &ldquo;abcde&rdquo;, 其中 &ldquo;e&rdquo; 是随机添加的字母。
+">
+
+
+<meta itemprop="datePublished" content="2017-07-13T07:31:38&#43;08:00" />
+<meta itemprop="dateModified" content="2017-07-13T07:31:38&#43;08:00" />
+<meta itemprop="wordCount" content="418">
+
+
+
+<meta itemprop="keywords" content="algorithm,leetcode,golang," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leetcode 算法题 - Find The Difference"/>
+<meta name="twitter:description" content="给定两个只包含小写字母的字符串 s 和 t，其中字符串 t 是由字符串 s 乱序后，再在随机位置添加一个字母而成，请找到该随机添加的字母。
+
+例如：s = &ldquo;abcd&rdquo;, t = &ldquo;abcde&rdquo;, 其中 &ldquo;e&rdquo; 是随机添加的字母。
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Error Logs</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Error Logs</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Leetcode 算法题 - Find The Difference</h1>
+
+      <div class="post-meta">
+        <span class="post-time">Created at 2017-07-13 07:31 </span>
+	<span class="post-time">Updated at 2017-07-13 07:31 </span>
+        <div class="post-category">
+            
+              <a href="/categories/algorithm/"> algorithm </a>
+            
+              <a href="/categories/leetcode/"> leetcode </a>
+            
+          </div>
+        <span class="more-meta"> 约 418 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+<ul>
+<li><a href="#原题">原题</a></li>
+<li><a href="#分析">分析</a></li>
+<li><a href="#实现">实现</a>
+<ul>
+<li><a href="#实现一">实现一</a></li>
+<li><a href="#实现二">实现二</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+
+    
+</div>
+
+    
+    <div class="post-content">
+      <p>给定两个只包含小写字母的字符串 <strong>s</strong> 和 <strong>t</strong>，其中字符串 <strong>t</strong> 是由字符串 <strong>s</strong> 乱序后，再在随机位置添加一个字母而成，请找到该随机添加的字母。</p>
+
+<p>例如：s = &ldquo;abcd&rdquo;, t = &ldquo;abcde&rdquo;, 其中 &ldquo;e&rdquo; 是随机添加的字母。
+</p>
+
+<p>其实这个例子不够明确，又比如 s = &ldquo;abcde&rdquo;, t = &ldquo;aedceb&rdquo;, 随机添加的字母还是 &ldquo;e&rdquo;。</p>
+
+<h1 id="原题">原题</h1>
+
+<p>Given two strings s and t which consist of only lowercase letters.</p>
+
+<p>String t is generated by random shuffling string s and then add one more letter at a random position.</p>
+
+<p>Find the letter that was added in t.</p>
+
+<p>Example:</p>
+
+<pre><code>Input:
+s = &quot;abcd&quot;
+t = &quot;abcde&quot;
+
+Output:
+e
+
+Explanation:
+'e' is the letter that was added.
+</code></pre>
+
+<h1 id="分析">分析</h1>
+
+<ul>
+<li>字符串 <strong>t</strong> 的字母总数比 <strong>s</strong> 多 1</li>
+<li>字符串 <strong>t</strong> 的字母类别数和 <strong>s</strong> 相同或多 1</li>
+</ul>
+
+<h1 id="实现">实现</h1>
+
+<p>完整代码和测试已托管在 <a href="https://github.com/razonyang/go-algorithm">go-algorithm</a>。</p>
+
+<h2 id="实现一">实现一</h2>
+
+<p>依题意，用 <strong>map[byte]int</strong> 存储字符串 s 中每个字母出现的次数，如果字符串 t 中某个字母不存在于 map 或出现次数过多，则该字母为随机添加的字母。</p>
+
+<p>时间复杂度： O(n)</p>
+
+<pre><code>func findTheDifference(s string, t string) byte {
+    m := make(map[byte]int, len(s))
+    for i := 0; i &lt; len(s); i++ {
+        m[s[i]] += 1
+    }
+
+    var b byte
+    for i := 0; i &lt; len(t); i++ {
+        if count, ok := m[t[i]]; !ok || count &lt;= 0 {
+            b = t[i]
+            break
+        } else {
+            m[t[i]] -= 1
+        }
+    }
+
+    return b
+}
+</code></pre>
+
+<h2 id="实现二">实现二</h2>
+
+<p>可以利用 XOR 解决</p>
+
+<pre><code>func findTheDifference2(s string, t string) byte {
+    var b byte
+    for i := 0; i &lt; len(s); i++ {
+        b ^= s[i] ^ t[i]
+    }
+    b ^= t[len(t)-1]
+
+    return b
+}
+</code></pre>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/algorithm/">algorithm</a>
+          
+          <a href="/tags/leetcode/">leetcode</a>
+          
+          <a href="/tags/golang/">golang</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/leetcode/database/swap-salary/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Leetcode 数据库面试题 - Swap Salary</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/leetcode/algorithm/longest-common-prefix/">
+            <span class="next-text nav-default">Leetcode 算法题 - Longest Common Prefix</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+
+      
+
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'errlogs';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com/" class="dsq-brlink" target="_blank">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:razonyang@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/7377118/razon-yang" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/razonyang" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/razonyang" class="iconfont icon-github" title="github"></a>
+  <a href="https://errlogs.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="copyright-year">
+    &copy; 
+    
+      2016 - 
+    2018
+    <span class="author">Razon Yang</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.6.6"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-97403777-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

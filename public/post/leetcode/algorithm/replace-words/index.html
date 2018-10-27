@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Leetcode 算法题 - Replace Words - Error Logs</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Razon Yang" />
+  <meta name="description" content="首先介绍几个概念 root 和 successor， root 后面拼接一个单词可以形成一个长单词，该长单词被称为 successor。举个例子， root 为 an， 拼接单词 other 形成 another， another 就是 successor。
+现在给出一个包含多个 root 的字典数组和一个句子。请将句子中的 successor 替换成 root。 如果 successor 有多个 root， 则用最短的 root 替换。 " />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.50-DEV" />
+
+
+<link rel="canonical" href="https://errlogs.com/post/leetcode/algorithm/replace-words/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.6.6" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="Leetcode 算法题 - Replace Words" />
+<meta property="og:description" content="首先介绍几个概念 root 和 successor， root 后面拼接一个单词可以形成一个长单词，该长单词被称为 successor。举个例子， root 为 an， 拼接单词 other 形成 another， another 就是 successor。
+
+现在给出一个包含多个 root 的字典数组和一个句子。请将句子中的 successor 替换成 root。 如果 successor 有多个 root， 则用最短的 root 替换。
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://errlogs.com/post/leetcode/algorithm/replace-words/" /><meta property="article:published_time" content="2017-07-24T12:05:03&#43;08:00"/>
+<meta property="article:modified_time" content="2017-07-24T12:05:03&#43;08:00"/>
+
+<meta itemprop="name" content="Leetcode 算法题 - Replace Words">
+<meta itemprop="description" content="首先介绍几个概念 root 和 successor， root 后面拼接一个单词可以形成一个长单词，该长单词被称为 successor。举个例子， root 为 an， 拼接单词 other 形成 another， another 就是 successor。
+
+现在给出一个包含多个 root 的字典数组和一个句子。请将句子中的 successor 替换成 root。 如果 successor 有多个 root， 则用最短的 root 替换。
+">
+
+
+<meta itemprop="datePublished" content="2017-07-24T12:05:03&#43;08:00" />
+<meta itemprop="dateModified" content="2017-07-24T12:05:03&#43;08:00" />
+<meta itemprop="wordCount" content="510">
+
+
+
+<meta itemprop="keywords" content="algorithm,leetcode,golang," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leetcode 算法题 - Replace Words"/>
+<meta name="twitter:description" content="首先介绍几个概念 root 和 successor， root 后面拼接一个单词可以形成一个长单词，该长单词被称为 successor。举个例子， root 为 an， 拼接单词 other 形成 another， another 就是 successor。
+
+现在给出一个包含多个 root 的字典数组和一个句子。请将句子中的 successor 替换成 root。 如果 successor 有多个 root， 则用最短的 root 替换。
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Error Logs</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Error Logs</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Leetcode 算法题 - Replace Words</h1>
+
+      <div class="post-meta">
+        <span class="post-time">Created at 2017-07-24 12:05 </span>
+	<span class="post-time">Updated at 2017-07-24 12:05 </span>
+        <div class="post-category">
+            
+              <a href="/categories/algorithm/"> algorithm </a>
+            
+              <a href="/categories/leetcode/"> leetcode </a>
+            
+          </div>
+        <span class="more-meta"> 约 510 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+<ul>
+<li><a href="#原题">原题</a></li>
+<li><a href="#分析">分析</a></li>
+<li><a href="#实现">实现</a></li>
+</ul>
+</nav>
+    </div>
+
+    
+</div>
+
+    
+    <div class="post-content">
+      <p>首先介绍几个概念 <strong>root</strong> 和 <strong>successor</strong>， <strong>root</strong> 后面拼接一个单词可以形成一个长单词，该长单词被称为 <strong>successor</strong>。举个例子， <strong>root</strong> 为 <strong>an</strong>， 拼接单词 <strong>other</strong> 形成 <strong>another</strong>， <strong>another</strong> 就是 <strong>successor</strong>。</p>
+
+<p>现在给出一个包含多个 <strong>root</strong> 的字典数组和一个句子。请将句子中的 <strong>successor</strong> 替换成 <strong>root</strong>。 如果 <strong>successor</strong> 有多个 <strong>root</strong>， 则用最短的 <strong>root</strong> 替换。
+</p>
+
+<h1 id="原题">原题</h1>
+
+<p>In English, we have a concept called <strong>root</strong>, which can be followed by some other words to form another longer word - let&rsquo;s call this word <strong>successor</strong>. For example, the root <strong>an</strong>, followed by <strong>other</strong>, which can form another word <strong>another</strong>.</p>
+
+<p>Now, given a dictionary consisting of many roots and a sentence. You need to replace all the <strong>successor</strong> in the sentence with the <strong>root</strong> forming it. If a <strong>successor</strong> has many <strong>roots</strong> can form it, replace it with the root with the shortest length.</p>
+
+<p>You need to output the sentence after the replacement.</p>
+
+<p>Example 1:</p>
+
+<pre><code>Input: dict = [&quot;cat&quot;, &quot;bat&quot;, &quot;rat&quot;]
+sentence = &quot;the cattle was rattled by the battery&quot;
+Output: &quot;the cat was rat by the bat&quot;
+</code></pre>
+
+<p><strong>Note:</strong></p>
+
+<ul>
+<li>The input will only have lower-case letters</li>
+<li>1 &lt;= dict words number &lt;= 1000</li>
+<li>1 &lt;= sentence words number &lt;= 1000</li>
+<li>1 &lt;= root length &lt;= 100</li>
+<li>1 &lt;= sentence words length &lt;= 1000</li>
+</ul>
+
+<h1 id="分析">分析</h1>
+
+<p>如题所述，目的是将句子中的单词（也就是 <strong>successor</strong>）用其 <strong>root</strong> 替换。</p>
+
+<ol>
+<li>根据空格将句子分离为一个单词数组</li>
+<li>将单词逐个寻找其 <strong>root</strong>，有则替换，无则忽略</li>
+<li>将替换后的单词数组，用空格拼接成新句子返回</li>
+</ol>
+
+<p>另外需要注意的是，要找到最短的 <strong>root</strong> 进行替换。</p>
+
+<h1 id="实现">实现</h1>
+
+<p>完整代码和测试已托管在 <a href="https://github.com/razonyang/go-algorithm">go-algorithm</a>。</p>
+
+<pre><code>func replaceWords(dict []string, sentence string) string {
+    words := strings.Split(sentence, &quot; &quot;)
+
+    for i := 0; i &lt; len(words); i++ {
+        for _, v := range dict {
+            if len(words[i]) &gt;= len(v) &amp;&amp; words[i][:len(v)] == v {
+                // in order to find the shortest root, doesn't break on here
+                words[i] = v
+            }
+        }
+    }
+
+    return strings.Join(words, &quot; &quot;)
+}
+</code></pre>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/algorithm/">algorithm</a>
+          
+          <a href="/tags/leetcode/">leetcode</a>
+          
+          <a href="/tags/golang/">golang</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/golang/installation/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Linux 搭建 Golang 开发环境</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/git/cache-username-and-password/">
+            <span class="next-text nav-default">Git 缓存用户名和密码</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+
+      
+
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'errlogs';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com/" class="dsq-brlink" target="_blank">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:razonyang@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/7377118/razon-yang" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/razonyang" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/razonyang" class="iconfont icon-github" title="github"></a>
+  <a href="https://errlogs.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="copyright-year">
+    &copy; 
+    
+      2016 - 
+    2018
+    <span class="author">Razon Yang</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.6.6"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-97403777-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chromium on Error Logs</title>
+    <link>https://errlogs.com/tags/chromium/</link>
+    <description>Recent content in Chromium on Error Logs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 20 Dec 2017 10:59:40 +0800</lastBuildDate>
+    
+	<atom:link href="https://errlogs.com/tags/chromium/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Chromium Stop Asking to Set as Default</title>
+      <link>https://errlogs.com/post/linux/chromium-stop-asking-to-set-as-default/</link>
+      <pubDate>Wed, 20 Dec 2017 10:59:40 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/linux/chromium-stop-asking-to-set-as-default/</guid>
+      <description>&lt;p&gt;今天安装了 Chromium 浏览器，但是每次打开都会提示&lt;code&gt;是否设置为默认浏览器&lt;/code&gt;，却没有&lt;code&gt;Don&#39;t Ask Again&lt;/code&gt;的按钮。
+经过一番搜索，Chromium 支持命令行参数 &lt;code&gt;-no-default-browser-check&lt;/code&gt; 可以停止检查是否默认浏览器。
+不过一般桌面的快捷方式应该如何设置呢？
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Disk on Error Logs</title>
+    <link>https://errlogs.com/tags/disk/</link>
+    <description>Recent content in Disk on Error Logs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 18 May 2018 17:46:54 +0800</lastBuildDate>
+    
+	<atom:link href="https://errlogs.com/tags/disk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gentoo 安装教程 - 分区</title>
+      <link>https://errlogs.com/post/gentoo/installation-partition/</link>
+      <pubDate>Fri, 18 May 2018 17:46:54 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/gentoo/installation-partition/</guid>
+      <description>&lt;p&gt;安装 Gentoo 之前，我们需要准备好磁盘，虽然可以使用整个硬盘，但是现实中几乎不这么做。
+事不宜迟，马上开始磁盘分区。
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

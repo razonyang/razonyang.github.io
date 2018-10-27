@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wechat on Error Logs</title>
+    <link>https://errlogs.com/tags/wechat/</link>
+    <description>Recent content in Wechat on Error Logs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 14 Jan 2018 11:21:21 +0800</lastBuildDate>
+    
+	<atom:link href="https://errlogs.com/tags/wechat/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>微信内置浏览器开发常见问题及其解决方法</title>
+      <link>https://errlogs.com/post/javascript/wechat-browser-develope/</link>
+      <pubDate>Sun, 14 Jan 2018 11:21:21 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/javascript/wechat-browser-develope/</guid>
+      <description>&lt;p&gt;本文记录了笔者在微信内置浏览器中开发遇到的问题以及相应的解决方法。
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

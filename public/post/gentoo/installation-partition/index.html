@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Gentoo 安装教程 - 分区 - Error Logs</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Razon Yang" />
+  <meta name="description" content="安装 Gentoo 之前，我们需要准备好磁盘，虽然可以使用整个硬盘，但是现实中几乎不这么做。 事不宜迟，马上开始磁盘分区。 " />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.50-DEV" />
+
+
+<link rel="canonical" href="https://errlogs.com/post/gentoo/installation-partition/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.6.6" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="Gentoo 安装教程 - 分区" />
+<meta property="og:description" content="安装 Gentoo 之前，我们需要准备好磁盘，虽然可以使用整个硬盘，但是现实中几乎不这么做。
+事不宜迟，马上开始磁盘分区。
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://errlogs.com/post/gentoo/installation-partition/" /><meta property="article:published_time" content="2018-05-18T17:46:54&#43;08:00"/>
+<meta property="article:modified_time" content="2018-05-18T17:46:54&#43;08:00"/>
+
+<meta itemprop="name" content="Gentoo 安装教程 - 分区">
+<meta itemprop="description" content="安装 Gentoo 之前，我们需要准备好磁盘，虽然可以使用整个硬盘，但是现实中几乎不这么做。
+事不宜迟，马上开始磁盘分区。
+">
+
+
+<meta itemprop="datePublished" content="2018-05-18T17:46:54&#43;08:00" />
+<meta itemprop="dateModified" content="2018-05-18T17:46:54&#43;08:00" />
+<meta itemprop="wordCount" content="683">
+
+
+
+<meta itemprop="keywords" content="gentoo,disk,partition," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Gentoo 安装教程 - 分区"/>
+<meta name="twitter:description" content="安装 Gentoo 之前，我们需要准备好磁盘，虽然可以使用整个硬盘，但是现实中几乎不这么做。
+事不宜迟，马上开始磁盘分区。
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Error Logs</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Error Logs</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Gentoo 安装教程 - 分区</h1>
+
+      <div class="post-meta">
+        <span class="post-time">Created at 2018-05-18 17:46 </span>
+	<span class="post-time">Updated at 2018-05-18 17:46 </span>
+        <div class="post-category">
+            
+              <a href="/categories/development/"> development </a>
+            
+          </div>
+        <span class="more-meta"> 约 683 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#分区表">分区表</a></li>
+<li><a href="#分区方案">分区方案</a></li>
+<li><a href="#分区">分区</a>
+<ul>
+<li><a href="#磁盘标志">磁盘标志</a></li>
+<li><a href="#开始分区">开始分区</a></li>
+</ul></li>
+<li><a href="#文件系统">文件系统</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+
+    
+</div>
+
+    
+    <div class="post-content">
+      <p>安装 Gentoo 之前，我们需要准备好磁盘，虽然可以使用整个硬盘，但是现实中几乎不这么做。
+事不宜迟，马上开始磁盘分区。
+</p>
+
+<h2 id="分区表">分区表</h2>
+
+<p>本教程使用 GPT + UEFI 进行分区和引导。</p>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Master_boot_record">MBR</a></li>
+<li><a href="https://en.wikipedia.org/wiki/GUID_Partition_Table">GPT</a></li>
+<li><a href="https://en.wikipedia.org/wiki/BIOS">BIOS</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface">UEFI</a></li>
+</ul>
+
+<h2 id="分区方案">分区方案</h2>
+
+<p>笔者用的是比较简单的分区方案：根分区，<code>home</code> 分区，<code>swap</code> 分区，大家可以根据自己需要进行调整。</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Partition</th>
+<th align="left">Size</th>
+<th align="left">File System</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">BIOS</td>
+<td align="left">2 MiB</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+
+<tr>
+<td align="left">/boot</td>
+<td align="left">256 MiB</td>
+<td align="left">fat32</td>
+<td align="left"></td>
+</tr>
+
+<tr>
+<td align="left">swap</td>
+<td align="left">8 GiB</td>
+<td align="left">swap</td>
+<td align="left">一般至少为内存大小</td>
+</tr>
+
+<tr>
+<td align="left">/</td>
+<td align="left">30 GiB</td>
+<td align="left">ext4</td>
+<td align="left">一般 20 GiB 足够了</td>
+</tr>
+
+<tr>
+<td align="left">/home</td>
+<td align="left">剩余空间</td>
+<td align="left">ext4</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="分区">分区</h2>
+
+<h3 id="磁盘标志">磁盘标志</h3>
+
+<p>紧接着开始进行分区，首先用 <code>fdisk</code> 命令确定要分区的磁盘信息：</p>
+
+<pre><code>$ fdisk
+
+Disk /dev/sdc: 111.8 GiB, 120034123776 bytes, 234441648 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: A4839DC8-2940-47C6-B2A7-D17F8E328411
+</code></pre>
+
+<p>可以看到我的磁盘标志是 <code>/dev/sdc</code>，后续篇章都会默认使用该磁盘标志。</p>
+
+<h3 id="开始分区">开始分区</h3>
+
+<p>这里我们使用 <code>parted</code> 进行分区：</p>
+
+<pre><code>$ parted -a optimal /dev/sdc
+GNU Parted 3.2
+Using /dev/sdc
+Welcome to GNU Parted! Type 'help' to view a list of commands.
+(parted)
+</code></pre>
+
+<p>设置 GPT 标签：</p>
+
+<pre><code>(parted) mklabel gpt                                                      
+Warning: The existing disk label on /dev/sdc will be destroyed and all data on this disk will be
+lost. Do you want to continue?
+Yes/No? y
+</code></pre>
+
+<p>设置容量单位</p>
+
+<pre><code>(parted) unit mib
+</code></pre>
+
+<p>BIOS 分区</p>
+
+<pre><code>(parted) mkpart primary 1 3
+(parted) name 1 grub
+(parted) set 1 bios_grub on
+</code></pre>
+
+<p>引导分区</p>
+
+<pre><code>(parted) mkpart primary 3 259
+(parted) name 2 boot
+(parted) set 2 boot on
+</code></pre>
+
+<p><code>swap</code> 分区</p>
+
+<pre><code>(parted) mkpart primary 259 8451
+(parted) name 3 swap
+</code></pre>
+
+<p>根分区</p>
+
+<pre><code>(parted) mkpart primary 8451 39171
+(parted) name 4 rootfs
+</code></pre>
+
+<p><code>home</code> 分区</p>
+
+<pre><code>(parted) mkpart primary 39171 -1 
+(parted) name 5 home
+</code></pre>
+
+<p>查看分区信息</p>
+
+<pre><code>(parted) p
+Model: aigo Portable SSD (scsi)
+Disk /dev/sdc: 114473MiB
+Sector size (logical/physical): 512B/512B
+Partition Table: gpt
+Disk Flags:
+
+Number  Start     End        Size      File system  Name    Flags
+ 1      1.00MiB   3.00MiB    2.00MiB                grub    bios_grub
+ 2      3.00MiB   259MiB     256MiB                 boot    boot, esp
+ 3      259MiB    8451MiB    8192MiB                swap
+ 4      8451MiB   39171MiB   30720MiB               rootfs
+ 5      39171MiB  114472MiB  75301MiB               home
+</code></pre>
+
+<blockquote>
+<p>需要注意 <code>boot</code> 分区是否有 <code>esp</code> 的标志。</p>
+</blockquote>
+
+<p>如果分区没有问题，输入 <code>q</code> 结束分区。</p>
+
+<h2 id="文件系统">文件系统</h2>
+
+<p>分区后，我们还需要给分区创建相应的文件系统。</p>
+
+<p>因为笔者使用的 <code>UEFI</code>，引导分区需要使用 <code>FAT32</code> 文件系统：</p>
+
+<pre><code>$ mkfs.fat -F 32 /dev/sdc2
+mkfs.fat 4.0 (2016-05-06)
+</code></pre>
+
+<blockquote>
+<p>如果抱怨说 <code>mkfs.fat: command not found</code>，你只需要 <code>emerge --ask sys-fs/dosfstools</code>。</p>
+</blockquote>
+
+<p>为根分区和 <code>home</code> 分区创建 <code>ext4</code> 分区：</p>
+
+<pre><code>$ mkfs.ext4 /dev/sdc4
+$ mkfs.ext4 /dev/sdc5
+</code></pre>
+
+<p>激活 <code>swap</code> 分区：</p>
+
+<pre><code>$ mkswap /dev/sdc3
+$ swapon /dev/sdc3
+</code></pre>
+
+<p>自此磁盘分区大功告成！接下来我们需要<a href="/post/gentoo/installation-stage">安装 Gentoo 安装文件</a>。</p>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/gentoo/">gentoo</a>
+          
+          <a href="/tags/disk/">disk</a>
+          
+          <a href="/tags/partition/">partition</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/gentoo/shadowsocks/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Gentoo 安装 Shadowsocks 进行科学上网</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/linux/centos-install-or-upgrade-to-php7/">
+            <span class="next-text nav-default">CentOS 安装或升级到 PHP7</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+
+      
+
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'errlogs';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com/" class="dsq-brlink" target="_blank">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:razonyang@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/7377118/razon-yang" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/razonyang" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/razonyang" class="iconfont icon-github" title="github"></a>
+  <a href="https://errlogs.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="copyright-year">
+    &copy; 
+    
+      2016 - 
+    2018
+    <span class="author">Razon Yang</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.6.6"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-97403777-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>
