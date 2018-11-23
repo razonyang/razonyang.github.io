@@ -42,6 +42,11 @@ googleAnalytics = "UA-97403777-2"
   weight = 40
   identifier = "categories"
   url = "/categories/"
+[[menu.main]]
+  name = "关于"
+  weight = 50
+  identifier = "about"
+  url = "/about/"
 
 [params]
   since = "2016"
