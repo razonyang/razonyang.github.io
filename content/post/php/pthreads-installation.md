@@ -17,7 +17,7 @@ categories: ["development", "php"]
 - PHP 7.2 以上
 - ZTS：线程安全
 
-由于笔者的操作系统自带的 PHP 是非 ZTS 的，所以按照 [PHP 编译安装详解](/php/compile) 编译安装 PHP ZTS 版。
+由于笔者的操作系统自带的 PHP 是非 ZTS 的，所以按照 [PHP 编译安装详解](/post/php/compile) 编译安装 PHP ZTS 版。
 
 
 ## 安装
