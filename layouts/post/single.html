@@ -25,6 +25,8 @@
     <!-- TOC -->
     {{ partial "post/toc.html" . }}
 
+    {{ partial "post/share.html" . }}
+
     <!-- Content -->
     <div class="post-content">
       {{ .Content }}
@@ -44,6 +46,8 @@
           {{ end }}
         </div>
       {{- end }}
+
+      {{ partial "post/share.html" . }}
 
       <!-- Post Pagination -->
       <nav class="post-nav">
