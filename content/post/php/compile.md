@@ -84,7 +84,7 @@ $ make && sudo make install
 
 在 `make install` 之前，你也可以进行测试 `make test`（可选）。
 
-`make install` 需要 root 权限，因为要写入到之前编译配置的 `--prefix` 目录。
+`make install` 可能需要 root 权限，鉴于要写入到之前编译配置的 `--prefix` 目录。
 
 > 如果修改了编译配置，你可能需要 `make clean`，然后再安装。
 
