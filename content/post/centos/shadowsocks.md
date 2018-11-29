@@ -35,7 +35,7 @@ pip install git+https://github.com/shadowsocks/shadowsocks.git@master
 }
 ```
 
-- server：服务器 IP 或域名
+- server：服务器 IP 或域名，如果有多个域名解析到同一个服务器 IP，那么可以将 `server` 设置为 `0.0.0.0`
 - server_port：端口
 - password：密码
 - method：加密方式
