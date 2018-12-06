@@ -21,9 +21,13 @@
         {{- end }}
       </div>
     </header>
-
+	
     <!-- TOC -->
     {{ partial "post/toc.html" . }}
+
+	<div class="ad">
+	  {{ partial "post/ad-bottom.html" . }}
+	</div>
 
     {{ partial "post/share.html" . }}
 
@@ -67,7 +71,9 @@
         {{- end }}
       </nav>
 
-      {{ partial "post/ad-bottom.html" . }}
+	  <div class="ad">
+        {{ partial "post/ad-bottom.html" . }}
+      </div>
 
     </footer>
   </article>

@@ -1,10 +1,14 @@
 {{ if and .Site.Params.toc (ne .Params.toc false) }}
 <div class="post-toc" id="post-toc">
+	{{ partial "search-form.html" . }}
+
     <h2 class="post-toc-title">{{ .Site.Data.even.default.posts.toc }}</h2>
     <div class="post-toc-content">
         {{.TableOfContents}}
     </div>
 
-    {{ partial "post/ad-right.html" . }}
+	<div class="ad">
+      {{ partial "post/ad-right.html" . }}
+	</div>
 </div>
 {{- end }}
