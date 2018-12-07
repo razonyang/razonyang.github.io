@@ -5,6 +5,8 @@
     <header class="post-header">
       <h1 class="post-title">{{ .Title }}</h1>
 
+      {{ partial "ad/banner.html" }}
+
       <div class="post-meta">
         <span class="post-time">Created at {{ .Date.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }} </span>
 	<span class="post-time">Updated at {{ .Page.Lastmod.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }} </span>
@@ -68,7 +70,7 @@
       </nav>
 
 	  <div class="ad">
-        {{ partial "post/ad-bottom.html" . }}
+        {{ partial "ad/post-bottom.html" . }}
       </div>
 
     </footer>
