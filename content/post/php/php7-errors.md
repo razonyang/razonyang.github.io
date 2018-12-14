@@ -21,6 +21,8 @@ try {
 }
 ```
 
+## 兼容 PHP 5
+
 所以如果要兼容 PHP 5，我们还需要添加 **Exception** 的 catch 块：
 <!--more-->
 
