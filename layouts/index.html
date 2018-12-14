@@ -3,7 +3,7 @@
     {{/* (index .Site.Paginate) */}}
     {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
     {{ range $index, $page := $paginator.Pages }}
-      {{ if eq (mod $index 3) 0 }}
+      {{ if eq (mod $index 3) 1 }}
         {{ partial "ad/banner.html" }}
       {{ end }}
       {{ .Render "summary" }}
