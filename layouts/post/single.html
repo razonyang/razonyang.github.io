@@ -40,6 +40,11 @@
     <!-- Reward -->
     {{ partial "post/reward.html" . }}
 
+    <!-- Ad -->
+    <div class="ad">
+      {{ partial "ad/post-bottom.html" . }}
+    </div>
+
     <footer class="post-footer">
       {{ with .Params.tags -}}
         <div class="post-tags">
@@ -66,10 +71,6 @@
           </a>
         {{- end }}
       </nav>
-
-	  <div class="ad">
-        {{ partial "ad/post-bottom.html" . }}
-      </div>
 
     </footer>
   </article>
