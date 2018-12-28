@@ -31,7 +31,9 @@ yum install https://rpms.remirepo.net/enterprise/remi-release-7.rpm
 yum-config-manager --enable remi-php72
 ```
 
-你也可以选择其他版本，如：`remi-php56`，`remi-php70`，`remi-php71`
+你也可以选择其他版本，如：`remi-php56`，`remi-php70`，`remi-php71`。
+
+> 如果 `yum-config-manager` 命令不存在，你需要安装 `yum-utils`：`yum -y install yum-utils`。
 
 ## 安装或升级
 
