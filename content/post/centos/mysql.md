@@ -24,6 +24,8 @@ CentOS 安装 MySQL
 # yum install mysql57-community-release-el7-11.noarch.rpm
 ```
 
+> 如果需要其他版本的下载链接或者链接失效，请到官方下载页面获取最新的链接。
+
 
 ## 安装
 
