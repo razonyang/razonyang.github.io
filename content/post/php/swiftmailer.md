@@ -1,5 +1,5 @@
 ---
-title: "Swift Mailer 无法和 SMTP 服务器"
+title: "Swift Mailer 无法连接 SMTP 服务器"
 date: 2019-01-11T13:46:48+08:00
 lastmod: 2019-01-11T13:46:48+08:00
 comment: true
