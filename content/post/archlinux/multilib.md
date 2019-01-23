@@ -1,3 +1,7 @@
+---
+draft: true
+---
+
 ```
 # vim /etc/pacman.conf
 ```

@@ -1,3 +1,8 @@
+---
+draft: true
+---
+
+
 ```
 $ git clone https://aur.archlinux.org/aurman.git 
 $ cd aurman
