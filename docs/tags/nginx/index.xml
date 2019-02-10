@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nginx on Error Logs</title>
+    <link>https://errlogs.com/tags/nginx/</link>
+    <description>Recent content in Nginx on Error Logs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 30 Jul 2018 00:58:03 +0800</lastBuildDate>
+    
+	<atom:link href="https://errlogs.com/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gentoo 安装 Nginx</title>
+      <link>https://errlogs.com/post/gentoo/nginx/</link>
+      <pubDate>Mon, 30 Jul 2018 00:58:03 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/gentoo/nginx/</guid>
+      <description>&lt;p&gt;无论在本地开发，还是线上服务器，Nginx 都是笔者首选的服务器软件，本文将简述如何在 Gentoo 安装 Nginx。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on Error Logs</title>
+    <link>https://errlogs.com/tags/git/</link>
+    <description>Recent content in Git on Error Logs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 24 Sep 2018 12:12:46 +0800</lastBuildDate>
+    
+	<atom:link href="https://errlogs.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git 配置</title>
+      <link>https://errlogs.com/post/git/config/</link>
+      <pubDate>Mon, 24 Sep 2018 12:12:46 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/git/config/</guid>
+      <description>&lt;p&gt;Git 常用配置命令。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Git 缓存用户名和密码</title>
+      <link>https://errlogs.com/post/git/cache-username-and-password/</link>
+      <pubDate>Wed, 19 Jul 2017 09:43:18 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/git/cache-username-and-password/</guid>
+      <description>&lt;p&gt;在使用 Git 的时候，经常 git pull, git push 等操作时需要输入用户名和密码，
+我们可以将用户名和密码缓存起来，提高工作效率。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

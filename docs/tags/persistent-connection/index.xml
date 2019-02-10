@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Persistent Connection on Error Logs</title>
+    <link>https://errlogs.com/tags/persistent-connection/</link>
+    <description>Recent content in Persistent Connection on Error Logs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 29 Nov 2018 16:16:37 +0800</lastBuildDate>
+    
+	<atom:link href="https://errlogs.com/tags/persistent-connection/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PHP PDO 持久连接的一些思考和实践</title>
+      <link>https://errlogs.com/post/php/pdo-persistent-connection/</link>
+      <pubDate>Thu, 29 Nov 2018 16:16:37 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/php/pdo-persistent-connection/</guid>
+      <description>&lt;p&gt;最近查阅 PHP 官方的 &lt;a href=&#34;http://php.net/manual/zh/book.pdo.php&#34;&gt;PDO 文档&lt;/a&gt;，
+在 &lt;a href=&#34;http://php.net/manual/zh/pdo.connections.php&#34;&gt;连接与连接管理&lt;/a&gt; 发现个有趣的配置：持久化连接。
+这一看，感觉像似连接池的东西，脑海中一下子就浮现好几个问题：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;持久连接不是可以减少建立数据库连接所产生的消耗，以到达复用连接，提高性能的目的吗，为啥没有默认设置呢？&lt;/li&gt;
+&lt;li&gt;持久连接可以设置最大连接数吗？&lt;/li&gt;
+&lt;li&gt;是否存在事务和死锁问题呢？若有应该如何避免呢？&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;img
+    src=&#34;https://errlogs.com/img/emoji/caught-my-attention.jpg&#34;
+    title=&#34;caught-my-attention&#34;
+    alt=&#34;caught-my-attention&#34;
+    
+    
+/&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

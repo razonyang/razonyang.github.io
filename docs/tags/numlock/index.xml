@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Numlock on Error Logs</title>
+    <link>https://errlogs.com/tags/numlock/</link>
+    <description>Recent content in Numlock on Error Logs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 30 Jul 2018 22:05:32 +0800</lastBuildDate>
+    
+	<atom:link href="https://errlogs.com/tags/numlock/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux 小键盘开机自启</title>
+      <link>https://errlogs.com/post/linux/turn-on-numlock-after-startup/</link>
+      <pubDate>Mon, 30 Jul 2018 22:05:32 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/linux/turn-on-numlock-after-startup/</guid>
+      <description>&lt;p&gt;笔记本每次启动后，都要手动开启小键盘，不免有些繁琐，如何让它自动开启呢？
+其实方式有很多，而本文的主角是 &lt;code&gt;numlockx&lt;/code&gt;。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

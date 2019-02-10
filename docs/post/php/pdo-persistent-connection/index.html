@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>PHP PDO 持久连接的一些思考和实践 - Error Logs</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Razon Yang" />
+  <meta name="description" content="最近查阅 PHP 官方的 PDO 文档， 在 连接与连接管理 发现个有趣的配置：持久化连接。 这一看，感觉像似连接池的东西，脑海中一下子就浮现好几个问题：
+ 持久连接不是可以减少建立数据库连接所产生的消耗，以到达复用连接，提高性能的目的吗，为啥没有默认设置呢？ 持久连接可以设置最大连接数吗？ 是否存在事务和死锁问题呢？若有应该如何避免呢？ &amp;hellip;  " />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0" />
+
+
+<link rel="canonical" href="https://errlogs.com/post/php/pdo-persistent-connection/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.6.6" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<link href="/css/custom.css" rel="stylesheet">
+
+<meta property="og:title" content="PHP PDO 持久连接的一些思考和实践" />
+<meta property="og:description" content="最近查阅 PHP 官方的 PDO 文档，
+在 连接与连接管理 发现个有趣的配置：持久化连接。
+这一看，感觉像似连接池的东西，脑海中一下子就浮现好几个问题：
+
+
+持久连接不是可以减少建立数据库连接所产生的消耗，以到达复用连接，提高性能的目的吗，为啥没有默认设置呢？
+持久连接可以设置最大连接数吗？
+是否存在事务和死锁问题呢？若有应该如何避免呢？
+&hellip;
+
+
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://errlogs.com/post/php/pdo-persistent-connection/" />
+<meta property="article:published_time" content="2018-11-29T16:16:37&#43;08:00"/>
+<meta property="article:modified_time" content="2018-11-29T16:16:37&#43;08:00"/>
+
+<meta itemprop="name" content="PHP PDO 持久连接的一些思考和实践">
+<meta itemprop="description" content="最近查阅 PHP 官方的 PDO 文档，
+在 连接与连接管理 发现个有趣的配置：持久化连接。
+这一看，感觉像似连接池的东西，脑海中一下子就浮现好几个问题：
+
+
+持久连接不是可以减少建立数据库连接所产生的消耗，以到达复用连接，提高性能的目的吗，为啥没有默认设置呢？
+持久连接可以设置最大连接数吗？
+是否存在事务和死锁问题呢？若有应该如何避免呢？
+&hellip;
+
+
+
+">
+
+
+<meta itemprop="datePublished" content="2018-11-29T16:16:37&#43;08:00" />
+<meta itemprop="dateModified" content="2018-11-29T16:16:37&#43;08:00" />
+<meta itemprop="wordCount" content="1396">
+
+
+
+<meta itemprop="keywords" content="php,pdo,持久连接,persistent connection," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PHP PDO 持久连接的一些思考和实践"/>
+<meta name="twitter:description" content="最近查阅 PHP 官方的 PDO 文档，
+在 连接与连接管理 发现个有趣的配置：持久化连接。
+这一看，感觉像似连接池的东西，脑海中一下子就浮现好几个问题：
+
+
+持久连接不是可以减少建立数据库连接所产生的消耗，以到达复用连接，提高性能的目的吗，为啥没有默认设置呢？
+持久连接可以设置最大连接数吗？
+是否存在事务和死锁问题呢？若有应该如何避免呢？
+&hellip;
+
+
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-7827859788508375",
+        enable_page_level_ads: true
+    });
+</script>
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Error Logs</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Error Logs</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/search/">搜索</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+        <h1 class="post-title">PHP PDO 持久连接的一些思考和实践</h1>
+
+        <div class="post-meta">
+            <span class="post-time">Created at 2018-11-29 16:16 </span>
+            <span class="post-time">Updated at 2018-11-29 16:16 </span>
+            <div class="post-category">
+                
+                <a href="/%20categories/development/"> development </a>
+                
+                <a href="/%20categories/php/"> php </a>
+                
+            </div>
+            <span class="more-meta"> 约 1396 字 </span>
+            <span class="more-meta"> 预计阅读 3 分钟 </span>
+        </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+    <form class="search-form" action="https://cse.google.com/cse" method="get" target="_blank">
+	<input type="hidden" name="cx" value="013738600064412710682:h7rr0i--dxa">
+	<input name="q" placeholder="搜索">
+</form>
+
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#环境">环境</a></li>
+<li><a href="#最大连接数">最大连接数</a>
+<ul>
+<li><a href="#进程">进程</a></li>
+<li><a href="#线程">线程</a></li>
+<li><a href="#总结">总结</a></li>
+</ul></li>
+<li><a href="#事务与锁">事务与锁</a>
+<ul>
+<li><a href="#事务">事务</a>
+<ul>
+<li><a href="#传统-web-模式">传统 Web 模式</a></li>
+<li><a href="#守护进程">守护进程</a></li>
+</ul></li>
+<li><a href="#锁">锁</a>
+<ul>
+<li><a href="#避免死锁">避免死锁</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#总结-1">总结</a></li>
+<li><a href="#相关链接">相关链接</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+
+    <div class="ad">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7827859788508375"
+         data-ad-slot="5595469703"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+</div>
+
+    
+
+    
+    <div class="post-content">
+        <p>最近查阅 PHP 官方的 <a href="http://php.net/manual/zh/book.pdo.php">PDO 文档</a>，
+在 <a href="http://php.net/manual/zh/pdo.connections.php">连接与连接管理</a> 发现个有趣的配置：持久化连接。
+这一看，感觉像似连接池的东西，脑海中一下子就浮现好几个问题：</p>
+
+<ul>
+<li>持久连接不是可以减少建立数据库连接所产生的消耗，以到达复用连接，提高性能的目的吗，为啥没有默认设置呢？</li>
+<li>持久连接可以设置最大连接数吗？</li>
+<li>是否存在事务和死锁问题呢？若有应该如何避免呢？</li>
+<li>&hellip;</li>
+</ul>
+
+
+<img
+    src="/img/emoji/caught-my-attention.jpg"
+    title="caught-my-attention"
+    alt="caught-my-attention"
+    
+    
+/>
+
+<p>对于第一个问题，待讨论完其余问题后，答案自然浮现。</p>
+
+<blockquote>
+<p>由于笔者知识面和深度有限，本文并不能系统且完整地阐述和解释所有问题，亦难免会有不严谨或错误的地方，还望指出和讨论。</p>
+</blockquote>
+
+<h2 id="环境">环境</h2>
+
+<ul>
+<li>PHP：7.2 ZTS</li>
+<li>PDO Driver：MySQL</li>
+</ul>
+
+<p>本文脚本已上传在 <a href="https://github.com/razonyang/php-lab/tree/master/pdo">Github</a>，有兴趣的可以 clone 下来亲自尝试。</p>
+
+<h2 id="最大连接数">最大连接数</h2>
+
+<p>经常一番查找和搜索，并没有最大连接数的配置，那么 PHP 是怎么维持持久连接的呢？首先想到的猜测是：每个进程/线程维持着一个持久连接，于是乎笔者写了两个脚本进行验证。</p>
+
+<h3 id="进程">进程</h3>
+
+<blockquote>
+<p>需要安装 <code>pcntl</code> 扩展。</p>
+</blockquote>
+
+<pre><code>$ php pdo/persistent-process.php
+
+Process #12516 connection ID: 107
+Process #12516 connection ID: 107
+Process #12516 connection ID: 107
+Process #12517 connection ID: 108
+Process #12517 connection ID: 108
+Process #12517 connection ID: 108
+Child process #12516 exited with status: 0
+Child process #12517 exited with status: 0
+</code></pre>
+
+<p>由上述输出可看出：相同进程的连接 ID 是相同的，也就是说不同进程间是无法复用持久连接。</p>
+
+<h3 id="线程">线程</h3>
+
+<blockquote>
+<p>需要安装 <code>pthreads</code> 扩展。</p>
+</blockquote>
+
+<pre><code>$ php pdo/persistent-thread.php
+
+Thread #140162891634432 connection ID: 105
+Thread #140162891634432 connection ID: 105
+Thread #140162891634432 connection ID: 105
+Segmentation fault
+</code></pre>
+
+<p>在多线程中貌似使用持久连接会出现段错误。</p>
+
+<h3 id="总结">总结</h3>
+
+<p>由上述两个脚本的输出，可以猜测出：每个进程/线程对于相同的凭证，会维持着同一个持久连接（笔者猜测！）。</p>
+
+<h2 id="事务与锁">事务与锁</h2>
+
+<p>关于持久连接，笔者最关心的是事务和锁，下面将逐一讨论。</p>
+
+<p>这里可能需要分开两种运行模式进行讨论，一种是长期运行的模式（如：守护进程），另一种是传统的 Web 模式（每次都新建脚本实例处理请求）。</p>
+
+<h3 id="事务">事务</h3>
+
+<p>关于事务，最关心的是：上一个请求的事务如果没有提交或者回滚，是否会影响下一个请求呢？</p>
+
+<h4 id="传统-web-模式">传统 Web 模式</h4>
+
+<p>在传统 Web 模式，每次都是新的脚本处理请求，因为脚本结束时，如果 PDO 处于事务中，但没有提交，PHP 会对其进行事务回滚，所以在这种情况下，并不会影响下一个请求。</p>
+
+<h4 id="守护进程">守护进程</h4>
+
+<p>如上述说明，PDO 连接如果在脚本结束时，会对未提交的事务进行回滚，但是在守护进程中，如果代码实现不严谨，会导致数据修改没有提交等问题。</p>
+
+<h3 id="锁">锁</h3>
+
+<p>如果在某个持久连接中，我们加了锁后没有在请求结束前，将锁释放，将会导致死锁。</p>
+
+<p>这是因为锁不像事务，PDO 无法自动在脚本中进行解锁（PDO 无法感知），而且因为是持久连接，该连接一直持有该锁，除非<strong>连接断开（含蓄释放锁）</strong>或者<strong>主动释放</strong>。</p>
+
+<p>试想下，如果加了互斥锁，那除了加锁的连接，其他连接就永远无法获取该锁而阻塞，此时需要<strong>人为干预</strong>或者<strong>数据库层面</strong>解决，这后果很恐怖。</p>
+
+
+<img
+    src="/img/emoji/for-example.jpeg"
+    title="for-example"
+    alt="for-example"
+    
+    
+/>
+
+<pre><code>$conn = getConnection();
+$conn-&gt;getPDO()-&gt;exec('LOCK TABLES user WRITE');
+
+// do something
+
+// forgot to release lock...
+</code></pre>
+
+<h4 id="避免死锁">避免死锁</h4>
+
+<p>除了连接断开会含蓄释放锁，我们可以用 <code>try</code> 和 <code>finally</code> 主动释放锁：</p>
+
+<pre><code>try {
+    // lock
+} finally {
+    // release lock
+}
+</code></pre>
+
+<h2 id="总结-1">总结</h2>
+
+<p>经过上述猜想和实践，可以粗略得出以下结论：</p>
+
+<ul>
+<li>因为持久连接和进程/线程数有关，大多场景下，无法在 PHP 层面控制最大的 PDO 连接数，也侧面地说明持久连接和连接池是两个东西。</li>
+<li>使用持久连接，需要开发者更加注意事务和锁的使用，如果编码不当很容易出现问题，比如：死锁。</li>
+<li>如果服务器和数据库都处于内网，似乎持久连接并不是那么有必要。</li>
+</ul>
+
+<p>使用持久连接能减少建立连接所需要的时间以提高性能是毋庸置疑的，但是是否有必要使用持久连接，还是需要根据自身情况进行权衡的。
+以笔者看来，如果业务瓶颈不在于连接，持久连接并没有多大收益。如果是守护进程，我们完全可以使用单例模式。</p>
+
+<p>总而言之，这个持久连接很鸡肋，有点失望。</p>
+
+<h2 id="相关链接">相关链接</h2>
+
+<ul>
+<li><a href="http://php.net/manual/zh/book.pdo.php">PHP PDO</a></li>
+<li><a href="https://stackoverflow.com/questions/23432948/fully-understanding-pdo-attr-persistent">Fully Understanding PDO ATTR_PERSISTENT</a></li>
+</ul>
+    </div>
+
+    
+    
+
+    
+    
+
+    
+    <div class="ad">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7827859788508375"
+         data-ad-slot="5595469703"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+    <footer class="post-footer">
+        <div class="post-tags">
+            
+            <a href="/%20tags/php/">php</a>
+            
+            <a href="/%20tags/pdo/">pdo</a>
+            
+            <a href="/%20tags/%E6%8C%81%E4%B9%85%E8%BF%9E%E6%8E%A5/">持久连接</a>
+            
+            <a href="/%20tags/persistent-connection/">persistent connection</a>
+            
+        </div>
+
+        
+        <nav class="post-nav">
+            
+            <a class="prev" href="/post/php/php7-errors/">
+                <i class="iconfont icon-left"></i>
+                <span class="prev-text nav-default">PHP 7 错误处理</span>
+                <span class="prev-text nav-mobile">上一篇</span>
+            </a>
+            
+            <a class="next" href="/post/php/pthreads-installation/">
+                <span class="next-text nav-default">PHP pthreads 多线程扩展安装教程</span>
+                <span class="prev-text nav-mobile">下一篇</span>
+                <i class="iconfont icon-right"></i>
+            </a>
+        </nav>
+
+    </footer>
+</article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'errlogs';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com/" class="dsq-brlink" target="_blank">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:razonyang@gmail.com" class="iconfont icon-email" title="email" target="_blank"></a>
+      <a href="https://stackoverflow.com/users/7377118/razon-yang" class="iconfont icon-stack-overflow" title="stack-overflow" target="_blank"></a>
+      <a href="https://twitter.com/razonyang" class="iconfont icon-twitter" title="twitter" target="_blank"></a>
+      <a href="https://github.com/razonyang" class="iconfont icon-github" title="github" target="_blank"></a>
+      <a href="https://www.weibo.com/razonyang" class="iconfont icon-weibo" title="weibo" target="_blank"></a>
+  <a href="https://errlogs.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss" target="_blank"></a>
+</div>
+
+<div class="copyright">
+  <span class="copyright-year">
+    &copy; 
+    
+      2016 - 
+    2019
+    <span class="author">Razon Yang</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.6.6"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-97403777-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

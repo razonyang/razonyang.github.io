@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Error Logs</title>
+    <link>https://errlogs.com/</link>
+    <description>Recent content on Error Logs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 11 Jan 2019 13:46:48 +0800</lastBuildDate>
+    
+	<atom:link href="https://errlogs.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Swift Mailer 无法连接 SMTP 服务器</title>
+      <link>https://errlogs.com/post/php/swiftmailer/</link>
+      <pubDate>Fri, 11 Jan 2019 13:46:48 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/php/swiftmailer/</guid>
+      <description>&lt;p&gt;今天发现线上的 Swift Mailer 接口无法发送邮件：&lt;strong&gt;Connection could not be established with host &amp;hellip;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;但是本地环境运行正常，首先怀疑是配置和服务器网络导致的。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CentOS 安装 MySQL</title>
+      <link>https://errlogs.com/post/centos/mysql/</link>
+      <pubDate>Sat, 29 Dec 2018 18:14:07 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/centos/mysql/</guid>
+      <description>&lt;p&gt;CentOS 安装 MySQL&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PHP 7 错误处理</title>
+      <link>https://errlogs.com/post/php/php7-errors/</link>
+      <pubDate>Thu, 06 Dec 2018 16:37:35 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/php/php7-errors/</guid>
+      <description>&lt;p&gt;相较于 PHP 5, PHP 7 改变了大多数错误的报告方式，其将错误作为 &lt;strong&gt;Error&lt;/strong&gt; 异常抛出。&lt;/p&gt;
+
+&lt;p&gt;因为 &lt;strong&gt;Error&lt;/strong&gt; 并非继承自 &lt;strong&gt;Exception&lt;/strong&gt;，如果你的运行环境混杂着 PHP 5 和 PHP 7 时，需要两个 &lt;code&gt;catch&lt;/code&gt; 块。&lt;/p&gt;
+
+&lt;p&gt;有意思的是 &lt;strong&gt;Error&lt;/strong&gt; 和 &lt;strong&gt;Exception&lt;/strong&gt; 均实现了 &lt;strong&gt;Throwable&lt;/strong&gt; 接口，但是如果仅用以下异常处理代码在 PHP 5 下并不起作用：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;try {
+    // ...
+} catch (\Throwable $t) {
+    echo $t-&amp;gt;getMessage() . PHP_EOL;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;兼容-php-5&#34;&gt;兼容 PHP 5&lt;/h2&gt;
+
+&lt;p&gt;所以如果要兼容 PHP 5，我们还需要添加 &lt;strong&gt;Exception&lt;/strong&gt; 的 catch 块：&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PHP PDO 持久连接的一些思考和实践</title>
+      <link>https://errlogs.com/post/php/pdo-persistent-connection/</link>
+      <pubDate>Thu, 29 Nov 2018 16:16:37 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/php/pdo-persistent-connection/</guid>
+      <description>&lt;p&gt;最近查阅 PHP 官方的 &lt;a href=&#34;http://php.net/manual/zh/book.pdo.php&#34;&gt;PDO 文档&lt;/a&gt;，
+在 &lt;a href=&#34;http://php.net/manual/zh/pdo.connections.php&#34;&gt;连接与连接管理&lt;/a&gt; 发现个有趣的配置：持久化连接。
+这一看，感觉像似连接池的东西，脑海中一下子就浮现好几个问题：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;持久连接不是可以减少建立数据库连接所产生的消耗，以到达复用连接，提高性能的目的吗，为啥没有默认设置呢？&lt;/li&gt;
+&lt;li&gt;持久连接可以设置最大连接数吗？&lt;/li&gt;
+&lt;li&gt;是否存在事务和死锁问题呢？若有应该如何避免呢？&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;img
+    src=&#34;https://errlogs.com/img/emoji/caught-my-attention.jpg&#34;
+    title=&#34;caught-my-attention&#34;
+    alt=&#34;caught-my-attention&#34;
+    
+    
+/&gt;</description>
+    </item>
+    
+    <item>
+      <title>PHP pthreads 多线程扩展安装教程</title>
+      <link>https://errlogs.com/post/php/pthreads-installation/</link>
+      <pubDate>Thu, 29 Nov 2018 15:25:53 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/php/pthreads-installation/</guid>
+      <description>&lt;p&gt;本文阐述如何在 Linux 下安装 PHP 的多线程扩展 - &lt;a href=&#34;http://php.net/manual/en/book.pthreads.php&#34;&gt;pthreads&lt;/a&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PHP 编译安装详解</title>
+      <link>https://errlogs.com/post/php/compile/</link>
+      <pubDate>Thu, 29 Nov 2018 13:21:28 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/php/compile/</guid>
+      <description>&lt;p&gt;前段时间，想尝试下 PHP 的多线程扩展 &lt;a href=&#34;http://php.net/manual/zh/book.pthreads.php&#34;&gt;pthreads&lt;/a&gt;，由于其要求 PHP 启用 ZTS （Zend Thread Safety），
+但是笔者所使用的发行版所能安装的 PHP 包都是 non-zts 的，所以只能自行编译和安装 PHP 了。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;题外话，貌似基本大多数 Linux 发行版的 PHP 包都是 non-zts 的，比如 Ubuntu、CentOS、Arch Linux 等。
+不过据我所知，Arch Linux AUR 有 ZTS 版本的 PHP，传送门可在本文底部&lt;a href=&#34;#相关链接&#34;&gt;相关链接&lt;/a&gt;找到。
+另外 Gentoo 的话，PHP 默认是 ZTS 的。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>关于</title>
+      <link>https://errlogs.com/about/</link>
+      <pubDate>Fri, 23 Nov 2018 17:54:00 +0800</pubDate>
+      
+      <guid>https://errlogs.com/about/</guid>
+      <description>No one will believe in you unless you did it. 友情链接 互链请邮箱联系。 Razon</description>
+    </item>
+    
+    <item>
+      <title>搜索</title>
+      <link>https://errlogs.com/search/</link>
+      <pubDate>Fri, 23 Nov 2018 17:54:00 +0800</pubDate>
+      
+      <guid>https://errlogs.com/search/</guid>
+      <description>(function() { var cx = &#39;013738600064412710682:h7rr0i--dxa&#39;; var gcse = document.createElement(&#39;script&#39;); gcse.type = &#39;text/javascript&#39;; gcse.async = true; gcse.src = &#39;https://cse.google.com/cse.js?cx=&#39; + cx; var s = document.getElementsByTagName(&#39;script&#39;)[0]; s.parentNode.insertBefore(gcse, s); })();</description>
+    </item>
+    
+    <item>
+      <title>CentOS 7 安装 ShadowSocks</title>
+      <link>https://errlogs.com/post/centos/shadowsocks/</link>
+      <pubDate>Fri, 26 Oct 2018 13:18:29 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/centos/shadowsocks/</guid>
+      <description>&lt;p&gt;CentOS 7 安装 ShadowSocks&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>PHP 多进程编程 - 入门</title>
+      <link>https://errlogs.com/post/php/pcntl/</link>
+      <pubDate>Thu, 11 Oct 2018 09:58:47 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/php/pcntl/</guid>
+      <description>&lt;p&gt;本文将简述如何快速了解 PHP 的多进程编程，并提供实验脚本。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Git 配置</title>
+      <link>https://errlogs.com/post/git/config/</link>
+      <pubDate>Mon, 24 Sep 2018 12:12:46 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/git/config/</guid>
+      <description>&lt;p&gt;Git 常用配置命令。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gentoo 安装 Fcitx 中文输入法</title>
+      <link>https://errlogs.com/post/gentoo/fcitx/</link>
+      <pubDate>Mon, 24 Sep 2018 12:06:23 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/gentoo/fcitx/</guid>
+      <description>&lt;p&gt;安装 Gentoo 系统后，输入法基本是最重要的软件之一了，本篇将介绍在 Gentoo 下如何安装 Fcitx 输入法。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CentOS 编译安装 PHP</title>
+      <link>https://errlogs.com/post/centos/php-compile/</link>
+      <pubDate>Mon, 24 Sep 2018 10:02:02 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/centos/php-compile/</guid>
+      <description>&lt;p&gt;由于 pthreads 要求 PHP 的版本是线程安全的，但 CentOS 装的都是非线程安全（NTS）的版本，于是笔者打算编译安装 PHP。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gentoo - 重建内核</title>
+      <link>https://errlogs.com/post/gentoo/rebuild-kernel/</link>
+      <pubDate>Sat, 15 Sep 2018 19:03:49 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/gentoo/rebuild-kernel/</guid>
+      <description>&lt;h2 id=&#34;rebuild-kernel&#34;&gt;Rebuild Kernel&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;$ make &amp;amp;&amp;amp; make modules_install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;$ make install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;update-boot-loader&#34;&gt;Update Boot Loader&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;$ grub-mkconfig -o /boot/grub/grub.cfg
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>Github 开启短信双重验证</title>
+      <link>https://errlogs.com/post/github/two-factor-authentication/</link>
+      <pubDate>Sun, 02 Sep 2018 11:58:09 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/github/two-factor-authentication/</guid>
+      <description>&lt;p&gt;前些天笔者想开启 Github 的短信方式的双重验证(two factor authentication)，但是发现并没有我们天朝的区号(86)，难道是 Github 不支持国内的短信双重验证吗？其实不然。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gentoo 安装教程 - 引导加载程序</title>
+      <link>https://errlogs.com/post/gentoo/installation-bootloader/</link>
+      <pubDate>Sun, 02 Sep 2018 11:09:00 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/gentoo/installation-bootloader/</guid>
+      <description>&lt;p&gt;安装好 Gentoo 系统后，我们还需要一个引导加载程序引导 Linux 系统的启动，本文选择的是个 GRUB2 作为引导加载程序。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gentoo 安装教程 - 配置系统</title>
+      <link>https://errlogs.com/post/gentoo/installation-system/</link>
+      <pubDate>Sun, 02 Sep 2018 10:29:16 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/gentoo/installation-system/</guid>
+      <description>&lt;p&gt;在完成 Linux 内核配置后，我们接下来需要配置系统，比如 &lt;strong&gt;fstab&lt;/strong&gt;，网络，&lt;strong&gt;root&lt;/strong&gt; 密码等等。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gentoo 安装教程 - Linux 内核配置</title>
+      <link>https://errlogs.com/post/gentoo/installation-kernel/</link>
+      <pubDate>Sun, 02 Sep 2018 09:28:28 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/gentoo/installation-kernel/</guid>
+      <description>&lt;p&gt;配置 Linux 内核有两种方式：自动和手动，如果你是新手，建议用自动方式。而本文只介绍如何手动配置 Linux 内核，这是因为手动配置生成内核所需的时间更短，大小更小。虽然对于首次手动配置的童鞋可能比较困难，但是熟能生巧。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gentoo 安装教程 - 安装基本系统</title>
+      <link>https://errlogs.com/post/gentoo/installation-base/</link>
+      <pubDate>Sat, 01 Sep 2018 22:51:41 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/gentoo/installation-base/</guid>
+      <description>&lt;p&gt;在上一篇教程 &lt;a href=&#34;https://errlogs.com/post/gentoo/installation-stage&#34;&gt;Gentoo 安装教程 - 安装文件&lt;/a&gt; 中，我们已经准备好 Gentoo 系统需要的安装文件了，
+下面我们接着安装 Gentoo 的基本系统。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gentoo 安装教程 - 安装文件</title>
+      <link>https://errlogs.com/post/gentoo/installation-stage/</link>
+      <pubDate>Sat, 01 Sep 2018 22:02:27 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/gentoo/installation-stage/</guid>
+      <description>&lt;p&gt;我们磁盘分区后，在安装 Gentoo 基本系统之前，需要安装 Gentoo 的安装文件。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gentoo 安装 ST</title>
+      <link>https://errlogs.com/post/gentoo/st/</link>
+      <pubDate>Mon, 30 Jul 2018 22:52:43 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/gentoo/st/</guid>
+      <description>&lt;p&gt;说起终端，笔者比较喜欢 ST，原因很明显 - Simple Terminal。
+本文将介绍如何在 Gentoo 下 ST 的安装，配置，以及补丁的使用。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux 小键盘开机自启</title>
+      <link>https://errlogs.com/post/linux/turn-on-numlock-after-startup/</link>
+      <pubDate>Mon, 30 Jul 2018 22:05:32 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/linux/turn-on-numlock-after-startup/</guid>
+      <description>&lt;p&gt;笔记本每次启动后，都要手动开启小键盘，不免有些繁琐，如何让它自动开启呢？
+其实方式有很多，而本文的主角是 &lt;code&gt;numlockx&lt;/code&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gentoo 声卡错误：hdaudio hdaudioC0D0: Unable to bind the codec</title>
+      <link>https://errlogs.com/post/gentoo/hdaudio-unable-to-bind-the-codec/</link>
+      <pubDate>Mon, 30 Jul 2018 01:33:55 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/gentoo/hdaudio-unable-to-bind-the-codec/</guid>
+      <description>&lt;p&gt;笔者在安装 Gentoo 后，发现声卡没有正常加载，用 &lt;code&gt;dmesg | grep audio&lt;/code&gt; 看到有以下错误：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[    3.121698] hdaudio hdaudioC0D0: Unable to bind the codec
+[    3.122375] hdaudio hdaudioC1D0: Unable to bind the codec
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gentoo 安装 Nginx</title>
+      <link>https://errlogs.com/post/gentoo/nginx/</link>
+      <pubDate>Mon, 30 Jul 2018 00:58:03 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/gentoo/nginx/</guid>
+      <description>&lt;p&gt;无论在本地开发，还是线上服务器，Nginx 都是笔者首选的服务器软件，本文将简述如何在 Gentoo 安装 Nginx。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gentoo 安装 MySQL</title>
+      <link>https://errlogs.com/post/gentoo/mysql/</link>
+      <pubDate>Mon, 30 Jul 2018 00:37:15 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/gentoo/mysql/</guid>
+      <description>&lt;p&gt;笔者日常工作开发基本离不开 MySQL，所以记录一下如何在 Gentoo 下安装 MySQL。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gentoo 安装多个版本 PHP</title>
+      <link>https://errlogs.com/post/gentoo/php/</link>
+      <pubDate>Sun, 29 Jul 2018 18:35:54 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/gentoo/php/</guid>
+      <description>&lt;p&gt;本文将简述如何在 Gentoo 中安装 PHP。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GRUB 记住上次启动项选择</title>
+      <link>https://errlogs.com/post/grub/remember-last-choice/</link>
+      <pubDate>Sun, 29 Jul 2018 00:49:10 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/grub/remember-last-choice/</guid>
+      <description>&lt;p&gt;本文介绍如何设置 GRUB，以记住上次启动项的选择。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gentoo 和 Windows 双系统启动</title>
+      <link>https://errlogs.com/post/gentoo/dual-boot-with-windows/</link>
+      <pubDate>Sun, 29 Jul 2018 00:14:55 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/gentoo/dual-boot-with-windows/</guid>
+      <description>&lt;p&gt;笔者平常使用 Gentoo 办公，但是在娱乐游戏方面，Windows 系统必不可少。
+但是在安装完 Gentoo 后，并没有 Windows 系统的启动项。
+本文将介绍如何设别和添加 Windows 系统的启动项。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gentoo 安装 Shadowsocks 进行科学上网</title>
+      <link>https://errlogs.com/post/gentoo/shadowsocks/</link>
+      <pubDate>Thu, 24 May 2018 19:01:52 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/gentoo/shadowsocks/</guid>
+      <description>&lt;p&gt;相信不少童鞋都是自己搭 Shadowsocks 进行科学上网的，正好笔者正在将服务器系统由 CentOS 转成 Gentoo，顺便分享下如何在 Gentoo 下安装 Shadowsocks 进行科学上网。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gentoo 安装教程 - 分区</title>
+      <link>https://errlogs.com/post/gentoo/installation-partition/</link>
+      <pubDate>Fri, 18 May 2018 17:46:54 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/gentoo/installation-partition/</guid>
+      <description>&lt;p&gt;安装 Gentoo 之前，我们需要准备好磁盘，虽然可以使用整个硬盘，但是现实中几乎不这么做。
+事不宜迟，马上开始磁盘分区。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CentOS 安装或升级到 PHP7</title>
+      <link>https://errlogs.com/post/linux/centos-install-or-upgrade-to-php7/</link>
+      <pubDate>Mon, 16 Apr 2018 13:10:26 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/linux/centos-install-or-upgrade-to-php7/</guid>
+      <description>&lt;p&gt;CentOS 官方仓库的 PHP 版本是 5.4，但此版本已经不再被官方支持，考虑到安全问题和更好的性能，我们有必要安装或升级更高版本的 PHP，比如最新的 7.2。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>开启 Redis 远程访问</title>
+      <link>https://errlogs.com/post/redis/enable-remote-access/</link>
+      <pubDate>Fri, 13 Apr 2018 14:08:03 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/redis/enable-remote-access/</guid>
+      <description>&lt;p&gt;本文阐述如何开启 Redis 的远程访问，以及相关问题的原因及解决方法。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>微信内置浏览器开发常见问题及其解决方法</title>
+      <link>https://errlogs.com/post/javascript/wechat-browser-develope/</link>
+      <pubDate>Sun, 14 Jan 2018 11:21:21 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/javascript/wechat-browser-develope/</guid>
+      <description>&lt;p&gt;本文记录了笔者在微信内置浏览器中开发遇到的问题以及相应的解决方法。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Vim 快速入门</title>
+      <link>https://errlogs.com/post/vi/vim-primer/</link>
+      <pubDate>Fri, 29 Dec 2017 15:28:18 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/vi/vim-primer/</guid>
+      <description>&lt;p&gt;如题所示，本文为&lt;code&gt;Vim&lt;/code&gt;入门教程，文章涵盖&lt;code&gt;Vim&lt;/code&gt;基本的操作：插入、替换、删除、搜索、修改、撤销、重做等等，以及笔者个人的理解和说明。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Chromium Stop Asking to Set as Default</title>
+      <link>https://errlogs.com/post/linux/chromium-stop-asking-to-set-as-default/</link>
+      <pubDate>Wed, 20 Dec 2017 10:59:40 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/linux/chromium-stop-asking-to-set-as-default/</guid>
+      <description>&lt;p&gt;今天安装了 Chromium 浏览器，但是每次打开都会提示&lt;code&gt;是否设置为默认浏览器&lt;/code&gt;，却没有&lt;code&gt;Don&#39;t Ask Again&lt;/code&gt;的按钮。
+经过一番搜索，Chromium 支持命令行参数 &lt;code&gt;-no-default-browser-check&lt;/code&gt; 可以停止检查是否默认浏览器。
+不过一般桌面的快捷方式应该如何设置呢？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL Workbench SSH Keep Alive</title>
+      <link>https://errlogs.com/post/mysql/mysql-workbench-ssh-keep-alive/</link>
+      <pubDate>Wed, 13 Dec 2017 15:41:13 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/mysql/mysql-workbench-ssh-keep-alive/</guid>
+      <description>&lt;p&gt;在使用 MySQL Workbench 连接远程数据库时，时常会断开连接，需要重新连接，不胜其烦。
+不过我们可以通过设置 &lt;strong&gt;SSH KeepAlive&lt;/strong&gt; 来保持连接。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo 表情包 Shortcode</title>
+      <link>https://errlogs.com/post/hugo/shortcode-emoji/</link>
+      <pubDate>Fri, 08 Dec 2017 14:25:55 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/hugo/shortcode-emoji/</guid>
+      <description>&lt;p&gt;在前文 &lt;a href=&#34;https://errlogs.com/post/hugo/markdown-embed-partial&#34;&gt;Hugo Markdown 里嵌入局部模板&lt;/a&gt; 中，描述了如何使用 Shortcode 使 Markdown 得以嵌入模板。
+但是对于表情包，引入局部模板不是很明智的做法，本文将讲述如何定制自己的&lt;strong&gt;表情包 Shortcode&lt;/strong&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo 转义 Shorcodes</title>
+      <link>https://errlogs.com/post/hugo/eacape-shorcodes/</link>
+      <pubDate>Tue, 21 Nov 2017 18:35:50 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/hugo/eacape-shorcodes/</guid>
+      <description>&lt;p&gt;在之前一篇博文 &lt;a href=&#34;https://errlogs.com/post/hugo/markdown-embed-partial&#34;&gt;Hugo Markdown 里嵌入局部模板&lt;/a&gt; 中使用到了 shortcodes,
+但是需要直接输出原本的 shortcodes 呢？应该如何转义呢？其实转义只需要添加注释即可。&lt;/p&gt;
+
+&lt;p&gt;比如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; partial &amp;quot;for-example.html&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;转义，左尖括号后加上&lt;code&gt;/*&lt;/code&gt;，右尖括号前加上&lt;code&gt;*/&lt;/code&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt; =&amp;gt; &amp;lt;/*
+&amp;gt; =&amp;gt; */&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo Markdown 里嵌入局部模板</title>
+      <link>https://errlogs.com/post/hugo/markdown-embed-partial/</link>
+      <pubDate>Tue, 21 Nov 2017 17:44:17 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/hugo/markdown-embed-partial/</guid>
+      <description>&lt;p&gt;笔者在编写博文时，喜欢使用一些表情包，比如：&lt;/p&gt;
+
+
+&lt;img
+    src=&#34;https://errlogs.com/img/emoji/for-example.jpeg&#34;
+    title=&#34;for-example&#34;
+    alt=&#34;for-example&#34;
+    
+    
+/&gt;
+
+&lt;p&gt;但是对于相同的表情包，如果每篇博文都复制相同的代码段，
+后续修改时就苦不堪言了，于是乎笔者开始寻求可以复用的方法。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;由于博客是使用 Hugo 搭建的，所以本文只适用 Hugo。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>PHP 获取 URL 信息</title>
+      <link>https://errlogs.com/post/php/retrieve-info-from-url/</link>
+      <pubDate>Tue, 21 Nov 2017 17:33:40 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/php/retrieve-info-from-url/</guid>
+      <description>&lt;p&gt;本文将阐述如何用PHP以正确的姿势获取URL的信息，并将其封装成类，方便复用。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>URI、URL 和 URN 之间的关系</title>
+      <link>https://errlogs.com/post/differences-between-uri-and-url-and-urn/</link>
+      <pubDate>Tue, 21 Nov 2017 10:01:50 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/differences-between-uri-and-url-and-urn/</guid>
+      <description>&lt;p&gt;之前经常看到 URI、URL 和 URN，但是都没去理清这三者的关系，于是今天就花了点时间搞清楚三者关系。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL CREATE TABLE ... LIKE Syntax</title>
+      <link>https://errlogs.com/post/mysql/syntax-create-table-like/</link>
+      <pubDate>Mon, 20 Nov 2017 16:29:00 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/mysql/syntax-create-table-like/</guid>
+      <description>&lt;p&gt;&lt;code&gt;CREATE TABLE ... LIKE&lt;/code&gt; 基于另一个表的定义创建一个空表，包括原表的所有列属性和索引：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;CREATE TABLE new_tbl LIKE orig_tbl;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;新创建的空表使用原表相同版本的存储格式。用户需要拥有对原表的&lt;code&gt;SELECT&lt;/code&gt;权限。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL Making a Copy of a Database</title>
+      <link>https://errlogs.com/post/mysql/copying-databases/</link>
+      <pubDate>Fri, 17 Nov 2017 16:47:01 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/mysql/copying-databases/</guid>
+      <description>&lt;p&gt;MySQL拷贝一个数据库，只需要简单的几个命令。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux 安裝 Redis Desktop Manager</title>
+      <link>https://errlogs.com/post/linux/redis-desktop-manager/</link>
+      <pubDate>Tue, 08 Aug 2017 10:50:44 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/linux/redis-desktop-manager/</guid>
+      <description>&lt;p&gt;为了更好的操作 Redis，最近找到了一款名为 &lt;a href=&#34;https://redisdesktop.com/&#34;&gt;Redis Desktop Manager&lt;/a&gt; Redis 客戶端，
+但按照官方的安装教程进行编译，出现了种种问题，所以记录下来，以便帮助他人。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 算法题 - Intersection of Two Arrays</title>
+      <link>https://errlogs.com/post/leetcode/algorithm/intersection-of-two-arrays/</link>
+      <pubDate>Mon, 07 Aug 2017 23:24:49 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/algorithm/intersection-of-two-arrays/</guid>
+      <description>&lt;p&gt;编写一个 function 获取两个数值数组的交集，交集中数值唯一。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 算法题 - Search Insert Position</title>
+      <link>https://errlogs.com/post/leetcode/algorithm/search-insert-position/</link>
+      <pubDate>Sun, 06 Aug 2017 21:33:04 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/algorithm/search-insert-position/</guid>
+      <description>&lt;p&gt;现给出一个已排序（升序）的数组和一个 &lt;strong&gt;target&lt;/strong&gt; 值，如果找到该 &lt;strong&gt;target&lt;/strong&gt;，则返回其所在数组的索引。
+如果没有找到，则按照升序，返回 &lt;strong&gt;target&lt;/strong&gt; 应被插入的位置。&lt;/p&gt;
+
+&lt;p&gt;你可以假定数组没有重复的值。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 算法题 - Set Mismatch</title>
+      <link>https://errlogs.com/post/leetcode/algorithm/set-mismatch/</link>
+      <pubDate>Sat, 05 Aug 2017 13:20:43 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/algorithm/set-mismatch/</guid>
+      <description>&lt;p&gt;集合 &lt;strong&gt;S&lt;/strong&gt; 一般包含数字 &lt;strong&gt;1~n&lt;/strong&gt;，但由于数据错误，其中的一个数字重复了，导致缺失了某一数字。&lt;/p&gt;
+
+&lt;p&gt;现给出一个数组 &lt;strong&gt;nums&lt;/strong&gt;，请找出其中重复和缺失的数字。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux 搭建 Golang 开发环境</title>
+      <link>https://errlogs.com/post/golang/installation/</link>
+      <pubDate>Sat, 05 Aug 2017 12:54:25 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/golang/installation/</guid>
+      <description>&lt;p&gt;在 Linux 中安装 Golang 非常简单，只需要一条命令即可，比如在 Ubuntu 下安装 Golang：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo apt install golang-go
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;不过安装的版本一般都不会是最新稳定版的，所以本文将简述如何手动安装特定版本的 Golang。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 算法题 - Replace Words</title>
+      <link>https://errlogs.com/post/leetcode/algorithm/replace-words/</link>
+      <pubDate>Mon, 24 Jul 2017 12:05:03 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/algorithm/replace-words/</guid>
+      <description>&lt;p&gt;首先介绍几个概念 &lt;strong&gt;root&lt;/strong&gt; 和 &lt;strong&gt;successor&lt;/strong&gt;， &lt;strong&gt;root&lt;/strong&gt; 后面拼接一个单词可以形成一个长单词，该长单词被称为 &lt;strong&gt;successor&lt;/strong&gt;。举个例子， &lt;strong&gt;root&lt;/strong&gt; 为 &lt;strong&gt;an&lt;/strong&gt;， 拼接单词 &lt;strong&gt;other&lt;/strong&gt; 形成 &lt;strong&gt;another&lt;/strong&gt;， &lt;strong&gt;another&lt;/strong&gt; 就是 &lt;strong&gt;successor&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;现在给出一个包含多个 &lt;strong&gt;root&lt;/strong&gt; 的字典数组和一个句子。请将句子中的 &lt;strong&gt;successor&lt;/strong&gt; 替换成 &lt;strong&gt;root&lt;/strong&gt;。 如果 &lt;strong&gt;successor&lt;/strong&gt; 有多个 &lt;strong&gt;root&lt;/strong&gt;， 则用最短的 &lt;strong&gt;root&lt;/strong&gt; 替换。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Git 缓存用户名和密码</title>
+      <link>https://errlogs.com/post/git/cache-username-and-password/</link>
+      <pubDate>Wed, 19 Jul 2017 09:43:18 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/git/cache-username-and-password/</guid>
+      <description>&lt;p&gt;在使用 Git 的时候，经常 git pull, git push 等操作时需要输入用户名和密码，
+我们可以将用户名和密码缓存起来，提高工作效率。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 数据库面试题 - Not Boring Movies</title>
+      <link>https://errlogs.com/post/leetcode/database/not-boring-movies/</link>
+      <pubDate>Thu, 13 Jul 2017 20:18:25 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/database/not-boring-movies/</guid>
+      <description>&lt;p&gt;某城市新开了一家影院，不少人很喜欢去这家影院。该影院也张贴了关于的电影的评级和描述的海报。&lt;/p&gt;
+
+&lt;p&gt;请写出一条 SQL，返回 id 为奇数，且 description 不是 &amp;ldquo;boring&amp;rdquo; 的电影，并按 rating 降序。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 数据库面试题 - Big Countries</title>
+      <link>https://errlogs.com/post/leetcode/database/big-countries/</link>
+      <pubDate>Thu, 13 Jul 2017 19:13:07 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/database/big-countries/</guid>
+      <description>&lt;p&gt;若一个国家的面积大于300万平方公里，或者人口大于2500万，则可以称之为大国。&lt;/p&gt;
+
+&lt;p&gt;请编写一条 SQL 返回所有大国的 name, population, area。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 算法题 - Merge Two Binary Trees</title>
+      <link>https://errlogs.com/post/leetcode/algorithm/merge-two-binary-trees/</link>
+      <pubDate>Thu, 13 Jul 2017 13:08:18 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/algorithm/merge-two-binary-trees/</guid>
+      <description>&lt;p&gt;合并两个二叉树，如果结点重叠，则该结点值为两者对应结点之和。否则，将当前对应的非空结点作为当前结点。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 数据库面试题 - Swap Salary</title>
+      <link>https://errlogs.com/post/leetcode/database/swap-salary/</link>
+      <pubDate>Thu, 13 Jul 2017 12:43:54 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/database/swap-salary/</guid>
+      <description>&lt;p&gt;用一条 UPDATE 语句，在不使用中间临时表的情况下，将 salary 表中 sex 的值反转。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 算法题 - Find The Difference</title>
+      <link>https://errlogs.com/post/leetcode/algorithm/find-the-difference/</link>
+      <pubDate>Thu, 13 Jul 2017 07:31:38 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/algorithm/find-the-difference/</guid>
+      <description>&lt;p&gt;给定两个只包含小写字母的字符串 &lt;strong&gt;s&lt;/strong&gt; 和 &lt;strong&gt;t&lt;/strong&gt;，其中字符串 &lt;strong&gt;t&lt;/strong&gt; 是由字符串 &lt;strong&gt;s&lt;/strong&gt; 乱序后，再在随机位置添加一个字母而成，请找到该随机添加的字母。&lt;/p&gt;
+
+&lt;p&gt;例如：s = &amp;ldquo;abcd&amp;rdquo;, t = &amp;ldquo;abcde&amp;rdquo;, 其中 &amp;ldquo;e&amp;rdquo; 是随机添加的字母。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 算法题 - Longest Common Prefix</title>
+      <link>https://errlogs.com/post/leetcode/algorithm/longest-common-prefix/</link>
+      <pubDate>Tue, 11 Jul 2017 09:52:01 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/algorithm/longest-common-prefix/</guid>
+      <description>&lt;p&gt;编写一个方法返回字符串数组的最长公共前缀。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux 各发行版安装 QQ 详细教程</title>
+      <link>https://errlogs.com/post/linux/qq/</link>
+      <pubDate>Mon, 10 Jul 2017 17:33:40 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/linux/qq/</guid>
+      <description>&lt;p&gt;笔者偏爱在 Linux 桌面下办公，特喜欢的是窗口置顶，让开发真的很舒服，也许这只是我个人习惯吧。
+不过也有不便之处，比如工作交流需要 QQ，而腾讯并没有开发 Linux 版的（最初有，可惜已经不能用了），
+不过好消息是有个 wine 版的 QQ（2012版） 可以使用，于我而言，办公交流足矣。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux 安装 fcitx 中文输入法和搜狗输入法</title>
+      <link>https://errlogs.com/post/linux/fcitx/</link>
+      <pubDate>Sun, 09 Jul 2017 11:08:49 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/linux/fcitx/</guid>
+      <description>&lt;p&gt;安装完　Linux 系统后，通常我们都需要安装中文输入法，
+本文将讲述如何在 Linux 中安装 fcitx 中文输入法和搜狗输入法。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 算法题 - Two Sum</title>
+      <link>https://errlogs.com/post/leetcode/algorithm/two-sum/</link>
+      <pubDate>Sun, 09 Jul 2017 10:04:05 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/algorithm/two-sum/</guid>
+      <description>&lt;p&gt;给定一个整数数组，如果两个元素值之和等于给定的值，则返回它们的索引。&lt;/p&gt;
+
+&lt;p&gt;你可以假定只有一个明确的答案，而且不能使用同一元素两次。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 算法题 - Fizz Buzz</title>
+      <link>https://errlogs.com/post/leetcode/algorithm/fizz-buzz/</link>
+      <pubDate>Sat, 08 Jul 2017 20:53:41 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/algorithm/fizz-buzz/</guid>
+      <description>&lt;p&gt;Leetcode 算法题 - Fizz Buzz&lt;/p&gt;
+
+&lt;p&gt;编写一个程序，用字符串表示数字 1 到 n，其中：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;如果数字是&lt;strong&gt;3&lt;/strong&gt;的倍数，则输出&lt;strong&gt;Fizz&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;如果数字是&lt;strong&gt;5&lt;/strong&gt;的倍数，则输出&lt;strong&gt;Buzz&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;如果数字是&lt;strong&gt;3&lt;/strong&gt;和&lt;strong&gt;5&lt;/strong&gt;的倍数，则输出&lt;strong&gt;FizzBuzz&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 算法题 - Remove Element</title>
+      <link>https://errlogs.com/post/leetcode/algorithm/remove-element/</link>
+      <pubDate>Sat, 08 Jul 2017 17:09:57 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/algorithm/remove-element/</guid>
+      <description>&lt;p&gt;Leetcode 算法题 - Remove Element&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;移除整数数组中值与给定数字相等的元素，并返回其最终的长度&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不能分配额外的内存&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux unzip 用法详解</title>
+      <link>https://errlogs.com/post/linux/unzip/</link>
+      <pubDate>Tue, 27 Jun 2017 12:25:48 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/linux/unzip/</guid>
+      <description>&lt;p&gt;本文将讲述 &lt;code&gt;unzip&lt;/code&gt; 的一些常用用法，比如&lt;code&gt;解压到制定的文件夹&lt;/code&gt;、&lt;code&gt;避免中文乱码问题&lt;/code&gt;等。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux 切换目录小技巧</title>
+      <link>https://errlogs.com/post/linux/pushd-and-popd/</link>
+      <pubDate>Sun, 16 Apr 2017 12:25:48 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/linux/pushd-and-popd/</guid>
+      <description>&lt;p&gt;在 Linux 终端，经常需要进行目录间的切换，有时候，我们需要切换至某个目录操作，完事后切换回原本目录，
+用 &lt;code&gt;cd&lt;/code&gt; 难免有些繁琐，此时 &lt;code&gt;pushd&lt;/code&gt; 和 &lt;code&gt;popd&lt;/code&gt; 就很方便了。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Leetcode on Error Logs</title>
+    <link>https://errlogs.com/tags/leetcode/</link>
+    <description>Recent content in Leetcode on Error Logs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 07 Aug 2017 23:24:49 +0800</lastBuildDate>
+    
+	<atom:link href="https://errlogs.com/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Leetcode 算法题 - Intersection of Two Arrays</title>
+      <link>https://errlogs.com/post/leetcode/algorithm/intersection-of-two-arrays/</link>
+      <pubDate>Mon, 07 Aug 2017 23:24:49 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/algorithm/intersection-of-two-arrays/</guid>
+      <description>&lt;p&gt;编写一个 function 获取两个数值数组的交集，交集中数值唯一。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 算法题 - Search Insert Position</title>
+      <link>https://errlogs.com/post/leetcode/algorithm/search-insert-position/</link>
+      <pubDate>Sun, 06 Aug 2017 21:33:04 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/algorithm/search-insert-position/</guid>
+      <description>&lt;p&gt;现给出一个已排序（升序）的数组和一个 &lt;strong&gt;target&lt;/strong&gt; 值，如果找到该 &lt;strong&gt;target&lt;/strong&gt;，则返回其所在数组的索引。
+如果没有找到，则按照升序，返回 &lt;strong&gt;target&lt;/strong&gt; 应被插入的位置。&lt;/p&gt;
+
+&lt;p&gt;你可以假定数组没有重复的值。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 算法题 - Set Mismatch</title>
+      <link>https://errlogs.com/post/leetcode/algorithm/set-mismatch/</link>
+      <pubDate>Sat, 05 Aug 2017 13:20:43 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/algorithm/set-mismatch/</guid>
+      <description>&lt;p&gt;集合 &lt;strong&gt;S&lt;/strong&gt; 一般包含数字 &lt;strong&gt;1~n&lt;/strong&gt;，但由于数据错误，其中的一个数字重复了，导致缺失了某一数字。&lt;/p&gt;
+
+&lt;p&gt;现给出一个数组 &lt;strong&gt;nums&lt;/strong&gt;，请找出其中重复和缺失的数字。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 算法题 - Replace Words</title>
+      <link>https://errlogs.com/post/leetcode/algorithm/replace-words/</link>
+      <pubDate>Mon, 24 Jul 2017 12:05:03 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/algorithm/replace-words/</guid>
+      <description>&lt;p&gt;首先介绍几个概念 &lt;strong&gt;root&lt;/strong&gt; 和 &lt;strong&gt;successor&lt;/strong&gt;， &lt;strong&gt;root&lt;/strong&gt; 后面拼接一个单词可以形成一个长单词，该长单词被称为 &lt;strong&gt;successor&lt;/strong&gt;。举个例子， &lt;strong&gt;root&lt;/strong&gt; 为 &lt;strong&gt;an&lt;/strong&gt;， 拼接单词 &lt;strong&gt;other&lt;/strong&gt; 形成 &lt;strong&gt;another&lt;/strong&gt;， &lt;strong&gt;another&lt;/strong&gt; 就是 &lt;strong&gt;successor&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;现在给出一个包含多个 &lt;strong&gt;root&lt;/strong&gt; 的字典数组和一个句子。请将句子中的 &lt;strong&gt;successor&lt;/strong&gt; 替换成 &lt;strong&gt;root&lt;/strong&gt;。 如果 &lt;strong&gt;successor&lt;/strong&gt; 有多个 &lt;strong&gt;root&lt;/strong&gt;， 则用最短的 &lt;strong&gt;root&lt;/strong&gt; 替换。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 数据库面试题 - Not Boring Movies</title>
+      <link>https://errlogs.com/post/leetcode/database/not-boring-movies/</link>
+      <pubDate>Thu, 13 Jul 2017 20:18:25 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/database/not-boring-movies/</guid>
+      <description>&lt;p&gt;某城市新开了一家影院，不少人很喜欢去这家影院。该影院也张贴了关于的电影的评级和描述的海报。&lt;/p&gt;
+
+&lt;p&gt;请写出一条 SQL，返回 id 为奇数，且 description 不是 &amp;ldquo;boring&amp;rdquo; 的电影，并按 rating 降序。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 数据库面试题 - Big Countries</title>
+      <link>https://errlogs.com/post/leetcode/database/big-countries/</link>
+      <pubDate>Thu, 13 Jul 2017 19:13:07 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/database/big-countries/</guid>
+      <description>&lt;p&gt;若一个国家的面积大于300万平方公里，或者人口大于2500万，则可以称之为大国。&lt;/p&gt;
+
+&lt;p&gt;请编写一条 SQL 返回所有大国的 name, population, area。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 算法题 - Merge Two Binary Trees</title>
+      <link>https://errlogs.com/post/leetcode/algorithm/merge-two-binary-trees/</link>
+      <pubDate>Thu, 13 Jul 2017 13:08:18 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/algorithm/merge-two-binary-trees/</guid>
+      <description>&lt;p&gt;合并两个二叉树，如果结点重叠，则该结点值为两者对应结点之和。否则，将当前对应的非空结点作为当前结点。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 数据库面试题 - Swap Salary</title>
+      <link>https://errlogs.com/post/leetcode/database/swap-salary/</link>
+      <pubDate>Thu, 13 Jul 2017 12:43:54 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/database/swap-salary/</guid>
+      <description>&lt;p&gt;用一条 UPDATE 语句，在不使用中间临时表的情况下，将 salary 表中 sex 的值反转。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 算法题 - Find The Difference</title>
+      <link>https://errlogs.com/post/leetcode/algorithm/find-the-difference/</link>
+      <pubDate>Thu, 13 Jul 2017 07:31:38 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/algorithm/find-the-difference/</guid>
+      <description>&lt;p&gt;给定两个只包含小写字母的字符串 &lt;strong&gt;s&lt;/strong&gt; 和 &lt;strong&gt;t&lt;/strong&gt;，其中字符串 &lt;strong&gt;t&lt;/strong&gt; 是由字符串 &lt;strong&gt;s&lt;/strong&gt; 乱序后，再在随机位置添加一个字母而成，请找到该随机添加的字母。&lt;/p&gt;
+
+&lt;p&gt;例如：s = &amp;ldquo;abcd&amp;rdquo;, t = &amp;ldquo;abcde&amp;rdquo;, 其中 &amp;ldquo;e&amp;rdquo; 是随机添加的字母。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 算法题 - Longest Common Prefix</title>
+      <link>https://errlogs.com/post/leetcode/algorithm/longest-common-prefix/</link>
+      <pubDate>Tue, 11 Jul 2017 09:52:01 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/algorithm/longest-common-prefix/</guid>
+      <description>&lt;p&gt;编写一个方法返回字符串数组的最长公共前缀。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 算法题 - Two Sum</title>
+      <link>https://errlogs.com/post/leetcode/algorithm/two-sum/</link>
+      <pubDate>Sun, 09 Jul 2017 10:04:05 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/algorithm/two-sum/</guid>
+      <description>&lt;p&gt;给定一个整数数组，如果两个元素值之和等于给定的值，则返回它们的索引。&lt;/p&gt;
+
+&lt;p&gt;你可以假定只有一个明确的答案，而且不能使用同一元素两次。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 算法题 - Fizz Buzz</title>
+      <link>https://errlogs.com/post/leetcode/algorithm/fizz-buzz/</link>
+      <pubDate>Sat, 08 Jul 2017 20:53:41 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/algorithm/fizz-buzz/</guid>
+      <description>&lt;p&gt;Leetcode 算法题 - Fizz Buzz&lt;/p&gt;
+
+&lt;p&gt;编写一个程序，用字符串表示数字 1 到 n，其中：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;如果数字是&lt;strong&gt;3&lt;/strong&gt;的倍数，则输出&lt;strong&gt;Fizz&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;如果数字是&lt;strong&gt;5&lt;/strong&gt;的倍数，则输出&lt;strong&gt;Buzz&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;如果数字是&lt;strong&gt;3&lt;/strong&gt;和&lt;strong&gt;5&lt;/strong&gt;的倍数，则输出&lt;strong&gt;FizzBuzz&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 算法题 - Remove Element</title>
+      <link>https://errlogs.com/post/leetcode/algorithm/remove-element/</link>
+      <pubDate>Sat, 08 Jul 2017 17:09:57 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/leetcode/algorithm/remove-element/</guid>
+      <description>&lt;p&gt;Leetcode 算法题 - Remove Element&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;移除整数数组中值与给定数字相等的元素，并返回其最终的长度&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不能分配额外的内存&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Error Logs</title>
+    <link>https://errlogs.com/tags/hugo/</link>
+    <description>Recent content in Hugo on Error Logs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 08 Dec 2017 14:25:55 +0800</lastBuildDate>
+    
+	<atom:link href="https://errlogs.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo 表情包 Shortcode</title>
+      <link>https://errlogs.com/post/hugo/shortcode-emoji/</link>
+      <pubDate>Fri, 08 Dec 2017 14:25:55 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/hugo/shortcode-emoji/</guid>
+      <description>&lt;p&gt;在前文 &lt;a href=&#34;https://errlogs.com/post/hugo/markdown-embed-partial&#34;&gt;Hugo Markdown 里嵌入局部模板&lt;/a&gt; 中，描述了如何使用 Shortcode 使 Markdown 得以嵌入模板。
+但是对于表情包，引入局部模板不是很明智的做法，本文将讲述如何定制自己的&lt;strong&gt;表情包 Shortcode&lt;/strong&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo 转义 Shorcodes</title>
+      <link>https://errlogs.com/post/hugo/eacape-shorcodes/</link>
+      <pubDate>Tue, 21 Nov 2017 18:35:50 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/hugo/eacape-shorcodes/</guid>
+      <description>&lt;p&gt;在之前一篇博文 &lt;a href=&#34;https://errlogs.com/post/hugo/markdown-embed-partial&#34;&gt;Hugo Markdown 里嵌入局部模板&lt;/a&gt; 中使用到了 shortcodes,
+但是需要直接输出原本的 shortcodes 呢？应该如何转义呢？其实转义只需要添加注释即可。&lt;/p&gt;
+
+&lt;p&gt;比如：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; partial &amp;quot;for-example.html&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;转义，左尖括号后加上&lt;code&gt;/*&lt;/code&gt;，右尖括号前加上&lt;code&gt;*/&lt;/code&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt; =&amp;gt; &amp;lt;/*
+&amp;gt; =&amp;gt; */&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo Markdown 里嵌入局部模板</title>
+      <link>https://errlogs.com/post/hugo/markdown-embed-partial/</link>
+      <pubDate>Tue, 21 Nov 2017 17:44:17 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/hugo/markdown-embed-partial/</guid>
+      <description>&lt;p&gt;笔者在编写博文时，喜欢使用一些表情包，比如：&lt;/p&gt;
+
+
+&lt;img
+    src=&#34;https://errlogs.com/img/emoji/for-example.jpeg&#34;
+    title=&#34;for-example&#34;
+    alt=&#34;for-example&#34;
+    
+    
+/&gt;
+
+&lt;p&gt;但是对于相同的表情包，如果每篇博文都复制相同的代码段，
+后续修改时就苦不堪言了，于是乎笔者开始寻求可以复用的方法。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;由于博客是使用 Hugo 搭建的，所以本文只适用 Hugo。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

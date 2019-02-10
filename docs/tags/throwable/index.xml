@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Throwable on Error Logs</title>
+    <link>https://errlogs.com/tags/throwable/</link>
+    <description>Recent content in Throwable on Error Logs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 06 Dec 2018 16:37:35 +0800</lastBuildDate>
+    
+	<atom:link href="https://errlogs.com/tags/throwable/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PHP 7 错误处理</title>
+      <link>https://errlogs.com/post/php/php7-errors/</link>
+      <pubDate>Thu, 06 Dec 2018 16:37:35 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/php/php7-errors/</guid>
+      <description>&lt;p&gt;相较于 PHP 5, PHP 7 改变了大多数错误的报告方式，其将错误作为 &lt;strong&gt;Error&lt;/strong&gt; 异常抛出。&lt;/p&gt;
+
+&lt;p&gt;因为 &lt;strong&gt;Error&lt;/strong&gt; 并非继承自 &lt;strong&gt;Exception&lt;/strong&gt;，如果你的运行环境混杂着 PHP 5 和 PHP 7 时，需要两个 &lt;code&gt;catch&lt;/code&gt; 块。&lt;/p&gt;
+
+&lt;p&gt;有意思的是 &lt;strong&gt;Error&lt;/strong&gt; 和 &lt;strong&gt;Exception&lt;/strong&gt; 均实现了 &lt;strong&gt;Throwable&lt;/strong&gt; 接口，但是如果仅用以下异常处理代码在 PHP 5 下并不起作用：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;try {
+    // ...
+} catch (\Throwable $t) {
+    echo $t-&amp;gt;getMessage() . PHP_EOL;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;兼容-php-5&#34;&gt;兼容 PHP 5&lt;/h2&gt;
+
+&lt;p&gt;所以如果要兼容 PHP 5，我们还需要添加 &lt;strong&gt;Exception&lt;/strong&gt; 的 catch 块：&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

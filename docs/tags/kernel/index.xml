@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kernel on Error Logs</title>
+    <link>https://errlogs.com/tags/kernel/</link>
+    <description>Recent content in Kernel on Error Logs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 15 Sep 2018 19:03:49 +0800</lastBuildDate>
+    
+	<atom:link href="https://errlogs.com/tags/kernel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gentoo - 重建内核</title>
+      <link>https://errlogs.com/post/gentoo/rebuild-kernel/</link>
+      <pubDate>Sat, 15 Sep 2018 19:03:49 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/gentoo/rebuild-kernel/</guid>
+      <description>&lt;h2 id=&#34;rebuild-kernel&#34;&gt;Rebuild Kernel&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;$ make &amp;amp;&amp;amp; make modules_install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;$ make install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;update-boot-loader&#34;&gt;Update Boot Loader&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;$ grub-mkconfig -o /boot/grub/grub.cfg
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gentoo 安装教程 - Linux 内核配置</title>
+      <link>https://errlogs.com/post/gentoo/installation-kernel/</link>
+      <pubDate>Sun, 02 Sep 2018 09:28:28 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/gentoo/installation-kernel/</guid>
+      <description>&lt;p&gt;配置 Linux 内核有两种方式：自动和手动，如果你是新手，建议用自动方式。而本文只介绍如何手动配置 Linux 内核，这是因为手动配置生成内核所需的时间更短，大小更小。虽然对于首次手动配置的童鞋可能比较困难，但是熟能生巧。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

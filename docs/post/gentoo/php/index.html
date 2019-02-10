@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Gentoo 安装多个版本 PHP - Error Logs</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Razon Yang" />
+  <meta name="description" content="本文将简述如何在 Gentoo 中安装 PHP。
+" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0" />
+
+
+<link rel="canonical" href="https://errlogs.com/post/gentoo/php/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.6.6" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<link href="/css/custom.css" rel="stylesheet">
+
+<meta property="og:title" content="Gentoo 安装多个版本 PHP" />
+<meta property="og:description" content="本文将简述如何在 Gentoo 中安装 PHP。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://errlogs.com/post/gentoo/php/" />
+<meta property="article:published_time" content="2018-07-29T18:35:54&#43;08:00"/>
+<meta property="article:modified_time" content="2018-07-29T18:35:54&#43;08:00"/>
+
+<meta itemprop="name" content="Gentoo 安装多个版本 PHP">
+<meta itemprop="description" content="本文将简述如何在 Gentoo 中安装 PHP。">
+
+
+<meta itemprop="datePublished" content="2018-07-29T18:35:54&#43;08:00" />
+<meta itemprop="dateModified" content="2018-07-29T18:35:54&#43;08:00" />
+<meta itemprop="wordCount" content="440">
+
+
+
+<meta itemprop="keywords" content="gentoo,php,php-fpm,lnmp," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Gentoo 安装多个版本 PHP"/>
+<meta name="twitter:description" content="本文将简述如何在 Gentoo 中安装 PHP。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-7827859788508375",
+        enable_page_level_ads: true
+    });
+</script>
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Error Logs</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Error Logs</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/search/">搜索</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+        <h1 class="post-title">Gentoo 安装多个版本 PHP</h1>
+
+        <div class="post-meta">
+            <span class="post-time">Created at 2018-07-29 18:35 </span>
+            <span class="post-time">Updated at 2018-07-29 18:35 </span>
+            <div class="post-category">
+                
+                <a href="/%20categories/development/"> development </a>
+                
+            </div>
+            <span class="more-meta"> 约 440 字 </span>
+            <span class="more-meta"> 预计阅读 1 分钟 </span>
+        </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+    <form class="search-form" action="https://cse.google.com/cse" method="get" target="_blank">
+	<input type="hidden" name="cx" value="013738600064412710682:h7rr0i--dxa">
+	<input name="q" placeholder="搜索">
+</form>
+
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#版本">版本</a></li>
+<li><a href="#use-flags">USE flags</a></li>
+<li><a href="#安装">安装</a></li>
+<li><a href="#切换版本">切换版本</a></li>
+<li><a href="#php-fpm-开机启动">PHP-FPM 开机启动</a></li>
+<li><a href="#相关文章">相关文章</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+
+    <div class="ad">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7827859788508375"
+         data-ad-slot="5595469703"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+</div>
+
+    
+
+    
+    <div class="post-content">
+        <p>本文将简述如何在 Gentoo 中安装 PHP。</p>
+
+<h2 id="版本">版本</h2>
+
+<p>要安装扩展，我们首先需要指定 PHP 的版本，这里笔者由于是 PHP ：</p>
+
+<pre><code>$ vi /etc/portage/make.conf
+
+PHP_TARGETS=&quot;php5-6 php7-0 php7-1 php7-2&quot;
+</code></pre>
+
+<h2 id="use-flags">USE flags</h2>
+
+<p>配置版本后，我们设置 USE 标记，以注明要安装的扩展，请按照各自需要设置：</p>
+
+<pre><code>$ vi /etc/portage/package.use/php
+
+dev-lang/php bcmath cli exif fileinfo filter fpm gd hash intl json opcache pcntl pdo simplexml soap threads xml
+</code></pre>
+
+<blockquote>
+<p>如果你打算使用 Apache，可以添加 <code>apache2</code>。</p>
+</blockquote>
+
+<h2 id="安装">安装</h2>
+
+<p>配置完成后，我们安装 PHP 即可：</p>
+
+<pre><code>emerge --ask --update --changed-use --deep @world
+
+emerge --ask =dev-lang/php-5.6.37 =dev-lang/php-7.0.31 =dev-lang/php-7.1.20 =dev-lang/php-7.2.8
+</code></pre>
+
+<blockquote>
+<p>具体版本号可以在 <a href="https://packages.gentoo.org/packages/dev-lang/php">https://packages.gentoo.org/packages/dev-lang/php</a> 找到。</p>
+</blockquote>
+
+<p>验证安装：</p>
+
+<pre><code>$ php -v
+PHP 7.1.18 (cli) (built: Jul 29 2018 18:53:48) ( ZTS )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.1.0, Copyright (c) 1998-2018 Zend Technologies
+    with Zend OPcache v7.1.18, Copyright (c) 1999-2018, by Zend Technologies
+</code></pre>
+
+<p>这说明默认使用的是 PHP 7.1。</p>
+
+<p>我们当然也可以切换改所使用的 PHP 版本。</p>
+
+<h2 id="切换版本">切换版本</h2>
+
+<p>本例以切换 cli 版本为例，如果需要切换其他的 SAPI 版本，只需要修改 cli 即可，比如 <code>fpm</code>，<code>cgi</code>，<code>apache2</code>等。</p>
+
+<p>列出可选的版本：</p>
+
+<pre><code>$ eselect php list cli
+  [1]   php5.6
+  [2]   php7.0
+  [3]   php7.1 *
+  [4]   php7.2
+</code></pre>
+
+<p>这里可以看到默认使用的 PHP CLI 版本是 PHP 7.1。假设我们需要切换到 7.2，可以使用以下命令：</p>
+
+<pre><code>$ eselect php set cli 4
+</code></pre>
+
+<p>验证：</p>
+
+<pre><code>$php -v
+PHP 7.2.8 (cli) (built: Jul 29 2018 19:26:46) ( ZTS )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
+    with Zend OPcache v7.2.8, Copyright (c) 1999-2018, by Zend Technologies
+</code></pre>
+
+<h2 id="php-fpm-开机启动">PHP-FPM 开机启动</h2>
+
+<pre><code>$ rc-update add php-fpm default
+</code></pre>
+
+<h2 id="相关文章">相关文章</h2>
+
+<ul>
+<li><a href="/post/gentoo/nginx">Gentoo 安装 Nginx</a></li>
+<li><a href="/post/gentoo/mysql">Gentoo 安装 MySQL</a></li>
+</ul>
+    </div>
+
+    
+    
+
+    
+    
+
+    
+    <div class="ad">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7827859788508375"
+         data-ad-slot="5595469703"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+    <footer class="post-footer">
+        <div class="post-tags">
+            
+            <a href="/%20tags/gentoo/">gentoo</a>
+            
+            <a href="/%20tags/php/">php</a>
+            
+            <a href="/%20tags/php-fpm/">php-fpm</a>
+            
+            <a href="/%20tags/lnmp/">lnmp</a>
+            
+        </div>
+
+        
+        <nav class="post-nav">
+            
+            <a class="prev" href="/post/gentoo/mysql/">
+                <i class="iconfont icon-left"></i>
+                <span class="prev-text nav-default">Gentoo 安装 MySQL</span>
+                <span class="prev-text nav-mobile">上一篇</span>
+            </a>
+            
+            <a class="next" href="/post/grub/remember-last-choice/">
+                <span class="next-text nav-default">GRUB 记住上次启动项选择</span>
+                <span class="prev-text nav-mobile">下一篇</span>
+                <i class="iconfont icon-right"></i>
+            </a>
+        </nav>
+
+    </footer>
+</article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'errlogs';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com/" class="dsq-brlink" target="_blank">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:razonyang@gmail.com" class="iconfont icon-email" title="email" target="_blank"></a>
+      <a href="https://stackoverflow.com/users/7377118/razon-yang" class="iconfont icon-stack-overflow" title="stack-overflow" target="_blank"></a>
+      <a href="https://twitter.com/razonyang" class="iconfont icon-twitter" title="twitter" target="_blank"></a>
+      <a href="https://github.com/razonyang" class="iconfont icon-github" title="github" target="_blank"></a>
+      <a href="https://www.weibo.com/razonyang" class="iconfont icon-weibo" title="weibo" target="_blank"></a>
+  <a href="https://errlogs.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss" target="_blank"></a>
+</div>
+
+<div class="copyright">
+  <span class="copyright-year">
+    &copy; 
+    
+      2016 - 
+    2019
+    <span class="author">Razon Yang</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.6.6"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-97403777-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

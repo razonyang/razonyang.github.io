@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Error Logs</title>
+    <link>https://errlogs.com/categories/</link>
+    <description>Recent content in Categories on Error Logs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 07 Aug 2017 23:24:49 +0800</lastBuildDate>
+    
+	<atom:link href="https://errlogs.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Algorithm</title>
+      <link>https://errlogs.com/categories/algorithm/</link>
+      <pubDate>Mon, 07 Aug 2017 23:24:49 +0800</pubDate>
+      
+      <guid>https://errlogs.com/categories/algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Database</title>
+      <link>https://errlogs.com/categories/database/</link>
+      <pubDate>Mon, 20 Nov 2017 16:29:00 +0800</pubDate>
+      
+      <guid>https://errlogs.com/categories/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Development</title>
+      <link>https://errlogs.com/categories/development/</link>
+      <pubDate>Fri, 11 Jan 2019 13:46:48 +0800</pubDate>
+      
+      <guid>https://errlogs.com/categories/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gentoo</title>
+      <link>https://errlogs.com/categories/gentoo/</link>
+      <pubDate>Mon, 24 Sep 2018 12:06:23 +0800</pubDate>
+      
+      <guid>https://errlogs.com/categories/gentoo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://errlogs.com/categories/git/</link>
+      <pubDate>Mon, 24 Sep 2018 12:12:46 +0800</pubDate>
+      
+      <guid>https://errlogs.com/categories/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Github</title>
+      <link>https://errlogs.com/categories/github/</link>
+      <pubDate>Sun, 02 Sep 2018 11:58:09 +0800</pubDate>
+      
+      <guid>https://errlogs.com/categories/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Leetcode</title>
+      <link>https://errlogs.com/categories/leetcode/</link>
+      <pubDate>Mon, 07 Aug 2017 23:24:49 +0800</pubDate>
+      
+      <guid>https://errlogs.com/categories/leetcode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://errlogs.com/categories/linux/</link>
+      <pubDate>Fri, 26 Oct 2018 13:18:29 +0800</pubDate>
+      
+      <guid>https://errlogs.com/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Php</title>
+      <link>https://errlogs.com/categories/php/</link>
+      <pubDate>Thu, 06 Dec 2018 16:37:35 +0800</pubDate>
+      
+      <guid>https://errlogs.com/categories/php/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

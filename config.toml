@@ -1,6 +1,6 @@
 baseURL = "https://errlogs.com/"
 contentDir = "content"
-publishDir = "public"
+publishDir = "docs"
 layoutDir = "layouts"
 languageCode = "zh-CN"
 defaultContentLanguage = "zh-CN"

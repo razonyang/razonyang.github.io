@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Leetcode 算法题 - Two Sum - Error Logs</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Razon Yang" />
+  <meta name="description" content="给定一个整数数组，如果两个元素值之和等于给定的值，则返回它们的索引。
+你可以假定只有一个明确的答案，而且不能使用同一元素两次。
+" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0" />
+
+
+<link rel="canonical" href="https://errlogs.com/post/leetcode/algorithm/two-sum/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.6.6" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<link href="/css/custom.css" rel="stylesheet">
+
+<meta property="og:title" content="Leetcode 算法题 - Two Sum" />
+<meta property="og:description" content="给定一个整数数组，如果两个元素值之和等于给定的值，则返回它们的索引。
+
+你可以假定只有一个明确的答案，而且不能使用同一元素两次。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://errlogs.com/post/leetcode/algorithm/two-sum/" />
+<meta property="article:published_time" content="2017-07-09T10:04:05&#43;08:00"/>
+<meta property="article:modified_time" content="2017-07-09T10:04:05&#43;08:00"/>
+
+<meta itemprop="name" content="Leetcode 算法题 - Two Sum">
+<meta itemprop="description" content="给定一个整数数组，如果两个元素值之和等于给定的值，则返回它们的索引。
+
+你可以假定只有一个明确的答案，而且不能使用同一元素两次。">
+
+
+<meta itemprop="datePublished" content="2017-07-09T10:04:05&#43;08:00" />
+<meta itemprop="dateModified" content="2017-07-09T10:04:05&#43;08:00" />
+<meta itemprop="wordCount" content="659">
+
+
+
+<meta itemprop="keywords" content="algorithm,golang,leetcode," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leetcode 算法题 - Two Sum"/>
+<meta name="twitter:description" content="给定一个整数数组，如果两个元素值之和等于给定的值，则返回它们的索引。
+
+你可以假定只有一个明确的答案，而且不能使用同一元素两次。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-7827859788508375",
+        enable_page_level_ads: true
+    });
+</script>
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Error Logs</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Error Logs</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/search/">搜索</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+        <h1 class="post-title">Leetcode 算法题 - Two Sum</h1>
+
+        <div class="post-meta">
+            <span class="post-time">Created at 2017-07-09 10:04 </span>
+            <span class="post-time">Updated at 2017-07-09 10:04 </span>
+            <div class="post-category">
+                
+                <a href="/%20categories/algorithm/"> algorithm </a>
+                
+                <a href="/%20categories/leetcode/"> leetcode </a>
+                
+            </div>
+            <span class="more-meta"> 约 659 字 </span>
+            <span class="more-meta"> 预计阅读 2 分钟 </span>
+        </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+    <form class="search-form" action="https://cse.google.com/cse" method="get" target="_blank">
+	<input type="hidden" name="cx" value="013738600064412710682:h7rr0i--dxa">
+	<input name="q" placeholder="搜索">
+</form>
+
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+<ul>
+<li><a href="#原题">原题</a></li>
+<li><a href="#分析">分析</a></li>
+<li><a href="#实现">实现</a>
+<ul>
+<li><a href="#双重循环">双重循环</a></li>
+<li><a href="#map">Map</a></li>
+<li><a href="#map-改良版">Map 改良版</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+
+    <div class="ad">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7827859788508375"
+         data-ad-slot="5595469703"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+</div>
+
+    
+
+    
+    <div class="post-content">
+        <p>给定一个整数数组，如果两个元素值之和等于给定的值，则返回它们的索引。</p>
+
+<p>你可以假定只有一个明确的答案，而且不能使用同一元素两次。</p>
+
+<h1 id="原题">原题</h1>
+
+<p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
+
+<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
+
+<p>Example:</p>
+
+<p>Given nums = [2, 7, 11, 15], target = 9,</p>
+
+<p>Because nums[0] + nums[1] = 2 + 7 = 9,
+return [0, 1].</p>
+
+<h1 id="分析">分析</h1>
+
+<ul>
+<li><p>目标：两元素的索引</p></li>
+
+<li><p>依据：两元素的值之和与给定的值是否相等</p></li>
+</ul>
+
+<h1 id="实现">实现</h1>
+
+<p>完整代码和测试已托管在 <a href="https://github.com/razonyang/go-algorithm">go-algorithm</a>。</p>
+
+<h2 id="双重循环">双重循环</h2>
+
+<p>按照题意，脑海最开始浮现的解法是用双重循环，将每个元素和其他元素相加，判断是否和给定值相等即可，相等则返回结束，否则继续。</p>
+
+<pre><code>func twoSum(nums []int, target int) []int {
+	for i := 0; i &lt; len(nums); i++ {
+		for j := i + 1; j &lt; len(nums); j++ {
+			if nums[i]+nums[j] == target {
+				return []int{i, j}
+			}
+		}
+	}
+
+	return []int{}
+}
+</code></pre>
+
+<h2 id="map">Map</h2>
+
+<p>但是双重循环的时间复杂度是 O(n^2)，是否有更好的解法呢？ 是否可以使用 <strong>Map</strong> 呢？如何使用呢？</p>
+
+<p>根据之前的分析，换个角度看，<strong>依据</strong>可以理解为：给定值和元素之间的差值，那么用 Map 来存储 <strong>&lsquo;数值&rsquo; =&gt; &lsquo;索引&rsquo;</strong> 的映射的话，则问题迎刃而解。</p>
+
+<pre><code>func twoSum(nums []int, target int) []int {
+	m := map[int]int{}
+	for i := 0; i &lt; len(nums); i++ {
+		m[nums[i]] = i
+	}
+
+	for i := 0; i &lt; len(nums); i++ {
+		minus := target - nums[i]
+		if j, ok := m[minus]; ok &amp;&amp; i != j {
+			return []int{i, j}
+		}
+	}
+
+	return []int{}
+}
+</code></pre>
+
+<h2 id="map-改良版">Map 改良版</h2>
+
+<p>上面的 Map 解法的使得时间复杂度从 O(n^2) 将为 O(n)，确切来说是2*O(n)，因为额外用了一个循环，将整数和其索引的映射存储到 Map 中，如果将两个循环合并在一起呢？</p>
+
+<p>仔细思考了下，于是得出以下优化后的代码，其中 <strong>m[nums[i]] = i</strong> 放在判断后面，可以避免多次使用同一元素。</p>
+
+<pre><code>func twoSum(nums []int, target int) []int {
+	m := map[int]int{}
+
+	for i := 0; i &lt; len(nums); i++ {
+		minus := target - nums[i]
+		if j, ok := m[minus]; ok {
+			return []int{i, j}
+		}
+
+		// the code placed here can avoid using the same element twice.
+		m[nums[i]] = i
+	}
+
+	return []int{}
+}
+</code></pre>
+    </div>
+
+    
+    
+
+    
+    
+
+    
+    <div class="ad">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7827859788508375"
+         data-ad-slot="5595469703"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+    <footer class="post-footer">
+        <div class="post-tags">
+            
+            <a href="/%20tags/algorithm/">algorithm</a>
+            
+            <a href="/%20tags/golang/">golang</a>
+            
+            <a href="/%20tags/leetcode/">leetcode</a>
+            
+        </div>
+
+        
+        <nav class="post-nav">
+            
+            <a class="prev" href="/post/linux/fcitx/">
+                <i class="iconfont icon-left"></i>
+                <span class="prev-text nav-default">Linux 安装 fcitx 中文输入法和搜狗输入法</span>
+                <span class="prev-text nav-mobile">上一篇</span>
+            </a>
+            
+            <a class="next" href="/post/leetcode/algorithm/fizz-buzz/">
+                <span class="next-text nav-default">Leetcode 算法题 - Fizz Buzz</span>
+                <span class="prev-text nav-mobile">下一篇</span>
+                <i class="iconfont icon-right"></i>
+            </a>
+        </nav>
+
+    </footer>
+</article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'errlogs';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com/" class="dsq-brlink" target="_blank">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:razonyang@gmail.com" class="iconfont icon-email" title="email" target="_blank"></a>
+      <a href="https://stackoverflow.com/users/7377118/razon-yang" class="iconfont icon-stack-overflow" title="stack-overflow" target="_blank"></a>
+      <a href="https://twitter.com/razonyang" class="iconfont icon-twitter" title="twitter" target="_blank"></a>
+      <a href="https://github.com/razonyang" class="iconfont icon-github" title="github" target="_blank"></a>
+      <a href="https://www.weibo.com/razonyang" class="iconfont icon-weibo" title="weibo" target="_blank"></a>
+  <a href="https://errlogs.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss" target="_blank"></a>
+</div>
+
+<div class="copyright">
+  <span class="copyright-year">
+    &copy; 
+    
+      2016 - 
+    2019
+    <span class="author">Razon Yang</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.6.6"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-97403777-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unzip on Error Logs</title>
+    <link>https://errlogs.com/tags/unzip/</link>
+    <description>Recent content in Unzip on Error Logs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 27 Jun 2017 12:25:48 +0800</lastBuildDate>
+    
+	<atom:link href="https://errlogs.com/tags/unzip/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux unzip 用法详解</title>
+      <link>https://errlogs.com/post/linux/unzip/</link>
+      <pubDate>Tue, 27 Jun 2017 12:25:48 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/linux/unzip/</guid>
+      <description>&lt;p&gt;本文将讲述 &lt;code&gt;unzip&lt;/code&gt; 的一些常用用法，比如&lt;code&gt;解压到制定的文件夹&lt;/code&gt;、&lt;code&gt;避免中文乱码问题&lt;/code&gt;等。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

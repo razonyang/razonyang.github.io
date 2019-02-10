@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>PHP pthreads 多线程扩展安装教程 - Error Logs</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Razon Yang" />
+  <meta name="description" content="本文阐述如何在 Linux 下安装 PHP 的多线程扩展 - pthreads。
+" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0" />
+
+
+<link rel="canonical" href="https://errlogs.com/post/php/pthreads-installation/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/even.min.css?v=2.6.6" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<link href="/css/custom.css" rel="stylesheet">
+
+<meta property="og:title" content="PHP pthreads 多线程扩展安装教程" />
+<meta property="og:description" content="本文阐述如何在 Linux 下安装 PHP 的多线程扩展 - pthreads。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://errlogs.com/post/php/pthreads-installation/" />
+<meta property="article:published_time" content="2018-11-29T15:25:53&#43;08:00"/>
+<meta property="article:modified_time" content="2018-11-29T15:25:53&#43;08:00"/>
+
+<meta itemprop="name" content="PHP pthreads 多线程扩展安装教程">
+<meta itemprop="description" content="本文阐述如何在 Linux 下安装 PHP 的多线程扩展 - pthreads。">
+
+
+<meta itemprop="datePublished" content="2018-11-29T15:25:53&#43;08:00" />
+<meta itemprop="dateModified" content="2018-11-29T15:25:53&#43;08:00" />
+<meta itemprop="wordCount" content="527">
+
+
+
+<meta itemprop="keywords" content="php,pthreads," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PHP pthreads 多线程扩展安装教程"/>
+<meta name="twitter:description" content="本文阐述如何在 Linux 下安装 PHP 的多线程扩展 - pthreads。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-7827859788508375",
+        enable_page_level_ads: true
+    });
+</script>
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Error Logs</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/search/">
+        <li class="mobile-menu-item">搜索</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Error Logs</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/search/">搜索</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+        <h1 class="post-title">PHP pthreads 多线程扩展安装教程</h1>
+
+        <div class="post-meta">
+            <span class="post-time">Created at 2018-11-29 15:25 </span>
+            <span class="post-time">Updated at 2018-11-29 15:25 </span>
+            <div class="post-category">
+                
+                <a href="/%20categories/development/"> development </a>
+                
+                <a href="/%20categories/php/"> php </a>
+                
+            </div>
+            <span class="more-meta"> 约 527 字 </span>
+            <span class="more-meta"> 预计阅读 2 分钟 </span>
+        </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+    <form class="search-form" action="https://cse.google.com/cse" method="get" target="_blank">
+	<input type="hidden" name="cx" value="013738600064412710682:h7rr0i--dxa">
+	<input name="q" placeholder="搜索">
+</form>
+
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#要求">要求</a></li>
+<li><a href="#安装">安装</a>
+<ul>
+<li><a href="#配置">配置</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+
+    <div class="ad">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7827859788508375"
+         data-ad-slot="5595469703"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+</div>
+
+    
+
+    
+    <div class="post-content">
+        <p>本文阐述如何在 Linux 下安装 PHP 的多线程扩展 - <a href="http://php.net/manual/en/book.pthreads.php">pthreads</a>。</p>
+
+<h2 id="要求">要求</h2>
+
+<p>笔者安装的是 pthreads v3。</p>
+
+<ul>
+<li>PHP 7.2 以上</li>
+<li>ZTS：线程安全</li>
+</ul>
+
+<p>由于笔者的操作系统自带的 PHP 是非 ZTS 的，所以按照 <a href="/post/php/compile">PHP 编译安装详解</a> 编译安装 PHP ZTS 版。</p>
+
+<h2 id="安装">安装</h2>
+
+<p>安装有两种方式：<code>pecl</code> 和 源码安装，不过笔者尝试过 <code>pecl</code> 安装失败，上面的 pthreads 包也是 2016 年的，所以笔者放弃 <code>pecl</code> 安装方式，
+本文将使用源码编译安装。</p>
+
+<pre><code>$ git clone https://github.com/krakjoe/pthreads.git
+$ cd pthreads
+
+$ /usr/local/php72/bin/phpize
+$ ./configure --with-php-config=/usr/local/php72/bin/php-config
+
+$ make
+
+$ sudo make install
+Installing shared extensions:     /usr/local/php72/lib/php/extensions/no-debug-zts-20170718/
+</code></pre>
+
+<ul>
+<li><code>./configure --with-php-config</code>：<code>--with-php-config</code> 是可选的，但由于笔者是编译安装的，所以可能需要指定 PHP 的配置脚本路径，以避免意想不到的问题。</li>
+</ul>
+
+<blockquote>
+<p>上述 <code>phpize</code>、<code>php-config</code> 等脚本请按照自己系统的配置自行修改。</p>
+</blockquote>
+
+<h3 id="配置">配置</h3>
+
+<p>安装成功后，在配置文件加入一行 <code>extension=pthreads.so</code>，比如笔者的 <code>CLI</code> 配置为：<code>/usr/local/php72/lib/php-cli.ini</code>：</p>
+
+<pre><code>$ sudo vi /usr/local/php72/lib/php-cli.ini
+
+extension=pthreads.so
+</code></pre>
+
+<blockquote>
+<p>这里笔者特意分开命令行和其他模式的配置文件，因为 <code>pthreads</code> 仅限于 CLI 模式使用。</p>
+</blockquote>
+
+<p>验证是否成功加载：</p>
+
+<pre><code>$ php72 -m | grep pthreads
+pthreads
+</code></pre>
+
+<p>如果没有输出，则说明配置不对，请检查配置是否正确。可以通过 <code>php72 --ini</code> 查看所加载的配置文件是否分正确。</p>
+
+<blockquote>
+<p><code>php72</code> 是笔者自行编译的 PHP ZTS 版脚本，请修改成你系统对应的脚本名称。</p>
+</blockquote>
+
+<p>自此，<code>pthreads</code> 安装完成。</p>
+    </div>
+
+    
+    
+
+    
+    
+
+    
+    <div class="ad">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7827859788508375"
+         data-ad-slot="5595469703"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+    <footer class="post-footer">
+        <div class="post-tags">
+            
+            <a href="/%20tags/php/">php</a>
+            
+            <a href="/%20tags/pthreads/">pthreads</a>
+            
+        </div>
+
+        
+        <nav class="post-nav">
+            
+            <a class="prev" href="/post/php/pdo-persistent-connection/">
+                <i class="iconfont icon-left"></i>
+                <span class="prev-text nav-default">PHP PDO 持久连接的一些思考和实践</span>
+                <span class="prev-text nav-mobile">上一篇</span>
+            </a>
+            
+            <a class="next" href="/post/php/compile/">
+                <span class="next-text nav-default">PHP 编译安装详解</span>
+                <span class="prev-text nav-mobile">下一篇</span>
+                <i class="iconfont icon-right"></i>
+            </a>
+        </nav>
+
+    </footer>
+</article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+        
+        
+        if (window.location.hostname === 'localhost') return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'errlogs';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com/" class="dsq-brlink" target="_blank">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+      </div>  
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:razonyang@gmail.com" class="iconfont icon-email" title="email" target="_blank"></a>
+      <a href="https://stackoverflow.com/users/7377118/razon-yang" class="iconfont icon-stack-overflow" title="stack-overflow" target="_blank"></a>
+      <a href="https://twitter.com/razonyang" class="iconfont icon-twitter" title="twitter" target="_blank"></a>
+      <a href="https://github.com/razonyang" class="iconfont icon-github" title="github" target="_blank"></a>
+      <a href="https://www.weibo.com/razonyang" class="iconfont icon-weibo" title="weibo" target="_blank"></a>
+  <a href="https://errlogs.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss" target="_blank"></a>
+</div>
+
+<div class="copyright">
+  <span class="copyright-year">
+    &copy; 
+    
+      2016 - 
+    2019
+    <span class="author">Razon Yang</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=2.6.6"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-97403777-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

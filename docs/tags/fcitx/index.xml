@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fcitx on Error Logs</title>
+    <link>https://errlogs.com/tags/fcitx/</link>
+    <description>Recent content in Fcitx on Error Logs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 24 Sep 2018 12:06:23 +0800</lastBuildDate>
+    
+	<atom:link href="https://errlogs.com/tags/fcitx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gentoo 安装 Fcitx 中文输入法</title>
+      <link>https://errlogs.com/post/gentoo/fcitx/</link>
+      <pubDate>Mon, 24 Sep 2018 12:06:23 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/gentoo/fcitx/</guid>
+      <description>&lt;p&gt;安装 Gentoo 系统后，输入法基本是最重要的软件之一了，本篇将介绍在 Gentoo 下如何安装 Fcitx 输入法。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux 安装 fcitx 中文输入法和搜狗输入法</title>
+      <link>https://errlogs.com/post/linux/fcitx/</link>
+      <pubDate>Sun, 09 Jul 2017 11:08:49 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/linux/fcitx/</guid>
+      <description>&lt;p&gt;安装完　Linux 系统后，通常我们都需要安装中文输入法，
+本文将讲述如何在 Linux 中安装 fcitx 中文输入法和搜狗输入法。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
