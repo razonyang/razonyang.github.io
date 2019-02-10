@@ -50,7 +50,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://errlogs.com/" />
 
-<meta property="og:updated_time" content="2019-01-11T13:46:48&#43;08:00"/>
+<meta property="og:updated_time" content="2019-02-10T22:16:33&#43;08:00"/>
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="">
@@ -140,6 +140,48 @@
       
       <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/linux/desktop-entry-set-environment-variables/">Desktop Entry Set Environment Variables</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2019-02-10 22:16 </span>
+      <div class="post-category">
+          
+            <a href="/categories/development/"> development </a>
+          
+        </div>
+      <span class="more-meta"> 约 173 字 </span>
+      <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>最近在 ArchLinux 上安装了网易云音乐，但是发现在 4k 屏下，相较于其他程序，显示过小。
+于是尝试命令行设置全局变量进行两倍放大：</p>
+
+<pre><code>QT_SCALE_FACTOR=2 netease-cloud-music
+</code></pre>
+
+<p>经过尝试，<code>QT_SCALE_FACTOR</code> 可以解决问题，于是乎修改相应的桌面文件即可：</p>
+
+<pre><code>Exec=env QT_SCALE_FACTOR=2 netease-cloud-music
+</code></pre>
+
+<blockquote>
+<p>注意其中的 <code>env</code> 指令。</p>
+</blockquote>
+
+<p>当然我们也可以将变量放在 <code>~/.xprofile</code> 之类的地方，但是鉴于其他程序并没有这样的问题，所以笔者仅修改了相应的桌面文件，避免影响其他软件。</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/linux/desktop-entry-set-environment-variables/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    
+      
+      <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/php/swiftmailer/">Swift Mailer 无法连接 SMTP 服务器</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2019-01-11 13:46 </span>
@@ -167,6 +209,20 @@
 
     
       
+        <div class="ad">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7827859788508375"
+         data-ad-slot="5595469703"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+      
       <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/centos/mysql/">CentOS 安装 MySQL</a></h1>
@@ -193,20 +249,6 @@
 </article>
 
     
-      
-        <div class="ad">
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-7827859788508375"
-         data-ad-slot="5595469703"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-</div>
       
       <article class="post">
   <header class="post-header">
@@ -299,6 +341,20 @@
 
     
       
+        <div class="ad">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7827859788508375"
+         data-ad-slot="5595469703"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+      
       <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/php/pthreads-installation/">PHP pthreads 多线程扩展安装教程</a></h1>
@@ -327,20 +383,6 @@
 </article>
 
     
-      
-        <div class="ad">
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-7827859788508375"
-         data-ad-slot="5595469703"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-</div>
       
       <article class="post">
   <header class="post-header">
@@ -405,6 +447,20 @@
 
     
       
+        <div class="ad">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7827859788508375"
+         data-ad-slot="5595469703"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+      
       <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/php/pcntl/">PHP 多进程编程 - 入门</a></h1>
@@ -434,20 +490,6 @@
 
     
       
-        <div class="ad">
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-7827859788508375"
-         data-ad-slot="5595469703"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-</div>
-      
       <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/git/config/">Git 配置</a></h1>
@@ -471,33 +513,6 @@
     </div>
     <div class="read-more">
       <a href="/post/git/config/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    
-      
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/gentoo/fcitx/">Gentoo 安装 Fcitx 中文输入法</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-09-24 12:06 </span>
-      <div class="post-category">
-          
-            <a href="/categories/gentoo/"> gentoo </a>
-          
-        </div>
-      <span class="more-meta"> 约 273 字 </span>
-      <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>安装 Gentoo 系统后，输入法基本是最重要的软件之一了，本篇将介绍在 Gentoo 下如何安装 Fcitx 输入法。</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/gentoo/fcitx/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://errlogs.com/post/linux/desktop-entry-set-environment-variables/</loc>
+    <lastmod>2019-02-10T22:16:33+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://errlogs.com/post/php/swiftmailer/</loc>
     <lastmod>2019-01-11T13:46:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -445,20 +452,20 @@
   
   <url>
     <loc>https://errlogs.com/</loc>
-    <lastmod>2019-01-11T13:46:48+08:00</lastmod>
+    <lastmod>2019-02-10T22:16:33+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://errlogs.com/tags/algorithm/</loc>
+    <loc>https://errlogs.com/categories/algorithm/</loc>
     <lastmod>2017-08-07T23:24:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://errlogs.com/categories/algorithm/</loc>
+    <loc>https://errlogs.com/tags/algorithm/</loc>
     <lastmod>2017-08-07T23:24:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -500,13 +507,6 @@
   </url>
   
   <url>
-    <loc>https://errlogs.com/tags/database/</loc>
-    <lastmod>2017-07-13T20:18:25+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://errlogs.com/categories/database/</loc>
     <lastmod>2017-11-20T16:29:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -514,8 +514,22 @@
   </url>
   
   <url>
+    <loc>https://errlogs.com/tags/database/</loc>
+    <lastmod>2017-07-13T20:18:25+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://errlogs.com/tags/desktop/</loc>
+    <lastmod>2019-02-10T22:16:33+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://errlogs.com/categories/development/</loc>
-    <lastmod>2019-01-11T13:46:48+08:00</lastmod>
+    <lastmod>2019-02-10T22:16:33+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -549,13 +563,6 @@
   </url>
   
   <url>
-    <loc>https://errlogs.com/tags/gentoo/</loc>
-    <lastmod>2018-09-24T12:06:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://errlogs.com/categories/gentoo/</loc>
     <lastmod>2018-09-24T12:06:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -563,8 +570,8 @@
   </url>
   
   <url>
-    <loc>https://errlogs.com/tags/git/</loc>
-    <lastmod>2018-09-24T12:12:46+08:00</lastmod>
+    <loc>https://errlogs.com/tags/gentoo/</loc>
+    <lastmod>2018-09-24T12:06:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -577,14 +584,21 @@
   </url>
   
   <url>
-    <loc>https://errlogs.com/tags/github/</loc>
-    <lastmod>2018-09-02T11:58:09+08:00</lastmod>
+    <loc>https://errlogs.com/tags/git/</loc>
+    <lastmod>2018-09-24T12:12:46+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://errlogs.com/categories/github/</loc>
+    <lastmod>2018-09-02T11:58:09+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://errlogs.com/tags/github/</loc>
     <lastmod>2018-09-02T11:58:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -619,13 +633,6 @@
   </url>
   
   <url>
-    <loc>https://errlogs.com/tags/leetcode/</loc>
-    <lastmod>2017-08-07T23:24:49+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://errlogs.com/categories/leetcode/</loc>
     <lastmod>2017-08-07T23:24:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -633,8 +640,8 @@
   </url>
   
   <url>
-    <loc>https://errlogs.com/tags/linux/</loc>
-    <lastmod>2018-07-30T22:05:32+08:00</lastmod>
+    <loc>https://errlogs.com/tags/leetcode/</loc>
+    <lastmod>2017-08-07T23:24:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -642,6 +649,13 @@
   <url>
     <loc>https://errlogs.com/categories/linux/</loc>
     <lastmod>2018-10-26T13:18:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://errlogs.com/tags/linux/</loc>
+    <lastmod>2019-02-10T22:16:33+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -724,15 +738,15 @@
   </url>
   
   <url>
-    <loc>https://errlogs.com/tags/php/</loc>
-    <lastmod>2019-01-11T13:46:48+08:00</lastmod>
+    <loc>https://errlogs.com/categories/php/</loc>
+    <lastmod>2018-12-06T16:37:35+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://errlogs.com/categories/php/</loc>
-    <lastmod>2018-12-06T16:37:35+08:00</lastmod>
+    <loc>https://errlogs.com/tags/php/</loc>
+    <lastmod>2019-01-11T13:46:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -760,7 +774,7 @@
   
   <url>
     <loc>https://errlogs.com/post/</loc>
-    <lastmod>2019-01-11T13:46:48+08:00</lastmod>
+    <lastmod>2019-02-10T22:16:33+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

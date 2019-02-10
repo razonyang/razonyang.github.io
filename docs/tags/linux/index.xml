@@ -6,10 +6,34 @@
     <description>Recent content in Linux on Error Logs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 30 Jul 2018 22:05:32 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 10 Feb 2019 22:16:33 +0800</lastBuildDate>
     
 	<atom:link href="https://errlogs.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Desktop Entry Set Environment Variables</title>
+      <link>https://errlogs.com/post/linux/desktop-entry-set-environment-variables/</link>
+      <pubDate>Sun, 10 Feb 2019 22:16:33 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/linux/desktop-entry-set-environment-variables/</guid>
+      <description>&lt;p&gt;最近在 ArchLinux 上安装了网易云音乐，但是发现在 4k 屏下，相较于其他程序，显示过小。
+于是尝试命令行设置全局变量进行两倍放大：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;QT_SCALE_FACTOR=2 netease-cloud-music
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;经过尝试，&lt;code&gt;QT_SCALE_FACTOR&lt;/code&gt; 可以解决问题，于是乎修改相应的桌面文件即可：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Exec=env QT_SCALE_FACTOR=2 netease-cloud-music
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;注意其中的 &lt;code&gt;env&lt;/code&gt; 指令。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;当然我们也可以将变量放在 &lt;code&gt;~/.xprofile&lt;/code&gt; 之类的地方，但是鉴于其他程序并没有这样的问题，所以笔者仅修改了相应的桌面文件，避免影响其他软件。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Linux 小键盘开机自启</title>

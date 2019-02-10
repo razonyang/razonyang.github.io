@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Swift Mailer 无法连接 SMTP 服务器 - Error Logs</title>
+  <title>Desktop Entry Set Environment Variables - Error Logs</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -17,8 +17,10 @@
 
 
 <meta name="author" content="Razon Yang" />
-  <meta name="description" content="今天发现线上的 Swift Mailer 接口无法发送邮件：Connection could not be established with host &amp;hellip;
-但是本地环境运行正常，首先怀疑是配置和服务器网络导致的。
+  <meta name="description" content="最近在 ArchLinux 上安装了网易云音乐，但是发现在 4k 屏下，相较于其他程序，显示过小。 于是尝试命令行设置全局变量进行两倍放大：
+QT_SCALE_FACTOR=2 netease-cloud-music  经过尝试，QT_SCALE_FACTOR 可以解决问题，于是乎修改相应的桌面文件即可：
+Exec=env QT_SCALE_FACTOR=2 netease-cloud-music   注意其中的 env 指令。
+ 当然我们也可以将变量放在 ~/.xprofile 之类的地方，但是鉴于其他程序并没有这样的问题，所以笔者仅修改了相应的桌面文件，避免影响其他软件。
 " />
 
 
@@ -30,7 +32,7 @@
 <meta name="generator" content="Hugo 0.54.0" />
 
 
-<link rel="canonical" href="https://errlogs.com/post/php/swiftmailer/" />
+<link rel="canonical" href="https://errlogs.com/post/linux/desktop-entry-set-environment-variables/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -47,33 +49,72 @@
 
 <link href="/css/custom.css" rel="stylesheet">
 
-<meta property="og:title" content="Swift Mailer 无法连接 SMTP 服务器" />
-<meta property="og:description" content="今天发现线上的 Swift Mailer 接口无法发送邮件：Connection could not be established with host &hellip;
+<meta property="og:title" content="Desktop Entry Set Environment Variables" />
+<meta property="og:description" content="最近在 ArchLinux 上安装了网易云音乐，但是发现在 4k 屏下，相较于其他程序，显示过小。
+于是尝试命令行设置全局变量进行两倍放大：
 
-但是本地环境运行正常，首先怀疑是配置和服务器网络导致的。" />
+QT_SCALE_FACTOR=2 netease-cloud-music
+
+
+经过尝试，QT_SCALE_FACTOR 可以解决问题，于是乎修改相应的桌面文件即可：
+
+Exec=env QT_SCALE_FACTOR=2 netease-cloud-music
+
+
+
+注意其中的 env 指令。
+
+
+当然我们也可以将变量放在 ~/.xprofile 之类的地方，但是鉴于其他程序并没有这样的问题，所以笔者仅修改了相应的桌面文件，避免影响其他软件。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://errlogs.com/post/php/swiftmailer/" />
-<meta property="article:published_time" content="2019-01-11T13:46:48&#43;08:00"/>
-<meta property="article:modified_time" content="2019-01-11T13:46:48&#43;08:00"/>
+<meta property="og:url" content="https://errlogs.com/post/linux/desktop-entry-set-environment-variables/" />
+<meta property="article:published_time" content="2019-02-10T22:16:33&#43;08:00"/>
+<meta property="article:modified_time" content="2019-02-10T22:16:33&#43;08:00"/>
 
-<meta itemprop="name" content="Swift Mailer 无法连接 SMTP 服务器">
-<meta itemprop="description" content="今天发现线上的 Swift Mailer 接口无法发送邮件：Connection could not be established with host &hellip;
+<meta itemprop="name" content="Desktop Entry Set Environment Variables">
+<meta itemprop="description" content="最近在 ArchLinux 上安装了网易云音乐，但是发现在 4k 屏下，相较于其他程序，显示过小。
+于是尝试命令行设置全局变量进行两倍放大：
 
-但是本地环境运行正常，首先怀疑是配置和服务器网络导致的。">
-
-
-<meta itemprop="datePublished" content="2019-01-11T13:46:48&#43;08:00" />
-<meta itemprop="dateModified" content="2019-01-11T13:46:48&#43;08:00" />
-<meta itemprop="wordCount" content="424">
+QT_SCALE_FACTOR=2 netease-cloud-music
 
 
+经过尝试，QT_SCALE_FACTOR 可以解决问题，于是乎修改相应的桌面文件即可：
 
-<meta itemprop="keywords" content="php,swift mailer,telnet," />
+Exec=env QT_SCALE_FACTOR=2 netease-cloud-music
+
+
+
+注意其中的 env 指令。
+
+
+当然我们也可以将变量放在 ~/.xprofile 之类的地方，但是鉴于其他程序并没有这样的问题，所以笔者仅修改了相应的桌面文件，避免影响其他软件。">
+
+
+<meta itemprop="datePublished" content="2019-02-10T22:16:33&#43;08:00" />
+<meta itemprop="dateModified" content="2019-02-10T22:16:33&#43;08:00" />
+<meta itemprop="wordCount" content="173">
+
+
+
+<meta itemprop="keywords" content="linux,desktop," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Swift Mailer 无法连接 SMTP 服务器"/>
-<meta name="twitter:description" content="今天发现线上的 Swift Mailer 接口无法发送邮件：Connection could not be established with host &hellip;
+<meta name="twitter:title" content="Desktop Entry Set Environment Variables"/>
+<meta name="twitter:description" content="最近在 ArchLinux 上安装了网易云音乐，但是发现在 4k 屏下，相较于其他程序，显示过小。
+于是尝试命令行设置全局变量进行两倍放大：
 
-但是本地环境运行正常，首先怀疑是配置和服务器网络导致的。"/>
+QT_SCALE_FACTOR=2 netease-cloud-music
+
+
+经过尝试，QT_SCALE_FACTOR 可以解决问题，于是乎修改相应的桌面文件即可：
+
+Exec=env QT_SCALE_FACTOR=2 netease-cloud-music
+
+
+
+注意其中的 env 指令。
+
+
+当然我们也可以将变量放在 ~/.xprofile 之类的地方，但是鉴于其他程序并没有这样的问题，所以笔者仅修改了相应的桌面文件，避免影响其他软件。"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -151,17 +192,17 @@
           <article class="post">
     
     <header class="post-header">
-        <h1 class="post-title">Swift Mailer 无法连接 SMTP 服务器</h1>
+        <h1 class="post-title">Desktop Entry Set Environment Variables</h1>
 
         <div class="post-meta">
-            <span class="post-time">Created at 2019-01-11 13:46 </span>
-            <span class="post-time">Updated at 2019-01-11 13:46 </span>
+            <span class="post-time">Created at 2019-02-10 22:16 </span>
+            <span class="post-time">Updated at 2019-02-10 22:16 </span>
             <div class="post-category">
                 
                 <a href="/%20categories/development/"> development </a>
                 
             </div>
-            <span class="more-meta"> 约 424 字 </span>
+            <span class="more-meta"> 约 173 字 </span>
             <span class="more-meta"> 预计阅读 1 分钟 </span>
         </div>
     </header>
@@ -176,20 +217,7 @@
 
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-        <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#配置">配置</a></li>
-<li><a href="#问题排查">问题排查</a>
-<ul>
-<li><a href="#配置-1">配置</a></li>
-<li><a href="#网络">网络</a></li>
-</ul></li>
-<li><a href="#相关链接">相关链接</a></li>
-</ul></li>
-</ul>
-</nav>
+        
     </div>
 
     <div class="ad">
@@ -211,77 +239,22 @@
 
     
     <div class="post-content">
-        <p>今天发现线上的 Swift Mailer 接口无法发送邮件：<strong>Connection could not be established with host &hellip;</strong></p>
+        <p>最近在 ArchLinux 上安装了网易云音乐，但是发现在 4k 屏下，相较于其他程序，显示过小。
+于是尝试命令行设置全局变量进行两倍放大：</p>
 
-<p>但是本地环境运行正常，首先怀疑是配置和服务器网络导致的。</p>
-
-<h2 id="配置">配置</h2>
-
-<table>
-<thead>
-<tr>
-<th align="left">参数</th>
-<th align="left">值</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="left">服务器</td>
-<td align="left"><strong>smtp.exmail.qq.com</strong></td>
-</tr>
-
-<tr>
-<td align="left">端口</td>
-<td align="left"><strong>25</strong></td>
-</tr>
-
-<tr>
-<td align="left">加密</td>
-<td align="left"><strong>tls</strong></td>
-</tr>
-</tbody>
-</table>
-
-<h2 id="问题排查">问题排查</h2>
-
-<h3 id="配置-1">配置</h3>
-
-<p>经过对比，线上配置和本地一致，暂时排除配置问题。</p>
-
-<h3 id="网络">网络</h3>
-
-<p>我们暂时认为配置是正确的，用 <code>telnet</code> 测试能否和 <strong>smtp.exmail.qq.com</strong> 建立连接：</p>
-
-<pre><code>$ telnet smtp.exmail.qq.com 25
-
-Trying 203.205.128.15...
-telnet: connect to address 203.205.128.15: Connection timed out
+<pre><code>QT_SCALE_FACTOR=2 netease-cloud-music
 </code></pre>
 
-<p>可以看到服务器连接超时，于是重新仔细查阅<a href="#相关链接">官方文档</a>，发现还有一个端口是 <code>465</code>，再试一次：</p>
+<p>经过尝试，<code>QT_SCALE_FACTOR</code> 可以解决问题，于是乎修改相应的桌面文件即可：</p>
 
-<pre><code>$ telnet smtp.exmail.qq.com 465
-
-Trying 163.177.90.125...
-Connected to smtp.exmail.qq.com.
-Escape character is '^]'.
+<pre><code>Exec=env QT_SCALE_FACTOR=2 netease-cloud-music
 </code></pre>
-
-<p>连上了！于是乎自信满满地修改配置，重新测试下线上接口。</p>
-
-<p>本以为完事了，可仍然发送失败。于是又看了下文档，发现腾讯企业邮箱 SMTP 只能用 <code>ssl</code> 加密传输，于是再次修改配置并测试，这次终于成功了。</p>
 
 <blockquote>
-<p>腾讯企业邮箱还提供了海外的 SMTP 服务器：<strong>hwsmtp.exmail.qq.com</strong>。
-如果你的服务器位置不在大陆，或者连不上 <strong>smtp.exmail.qq.com</strong>，可以尝试更换为海外服务器。</p>
+<p>注意其中的 <code>env</code> 指令。</p>
 </blockquote>
 
-<h2 id="相关链接">相关链接</h2>
-
-<ul>
-<li><a href="https://service.exmail.qq.com/cgi-bin/help?subtype=1&amp;id=28&amp;no=1000585">腾讯企业邮箱 - 如何设置IMAP、POP3/SMTP及其SSL加密方式？</a></li>
-</ul>
+<p>当然我们也可以将变量放在 <code>~/.xprofile</code> 之类的地方，但是鉴于其他程序并没有这样的问题，所以笔者仅修改了相应的桌面文件，避免影响其他软件。</p>
     </div>
 
     
@@ -308,25 +281,18 @@ Escape character is '^]'.
     <footer class="post-footer">
         <div class="post-tags">
             
-            <a href="/%20tags/php/">php</a>
+            <a href="/%20tags/linux/">linux</a>
             
-            <a href="/%20tags/swift-mailer/">swift mailer</a>
-            
-            <a href="/%20tags/telnet/">telnet</a>
+            <a href="/%20tags/desktop/">desktop</a>
             
         </div>
 
         
         <nav class="post-nav">
             
-            <a class="prev" href="/post/linux/desktop-entry-set-environment-variables/">
-                <i class="iconfont icon-left"></i>
-                <span class="prev-text nav-default">Desktop Entry Set Environment Variables</span>
-                <span class="prev-text nav-mobile">上一篇</span>
-            </a>
             
-            <a class="next" href="/post/centos/mysql/">
-                <span class="next-text nav-default">CentOS 安装 MySQL</span>
+            <a class="next" href="/post/php/swiftmailer/">
+                <span class="next-text nav-default">Swift Mailer 无法连接 SMTP 服务器</span>
                 <span class="prev-text nav-mobile">下一篇</span>
                 <i class="iconfont icon-right"></i>
             </a>
