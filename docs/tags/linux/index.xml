@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Desktop Entry Set Environment Variables</title>
+      <title>Linux 桌面快捷方式设置环境变量</title>
       <link>https://errlogs.com/post/linux/desktop-entry-set-environment-variables/</link>
       <pubDate>Sun, 10 Feb 2019 22:16:33 +0800</pubDate>
       
@@ -23,7 +23,7 @@
 &lt;pre&gt;&lt;code&gt;QT_SCALE_FACTOR=2 netease-cloud-music
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;经过尝试，&lt;code&gt;QT_SCALE_FACTOR&lt;/code&gt; 可以解决问题，于是乎修改相应的桌面文件即可：&lt;/p&gt;
+&lt;p&gt;经过尝试，&lt;code&gt;QT_SCALE_FACTOR&lt;/code&gt; 可以解决问题，于是乎修改相应的桌面快捷方式：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;Exec=env QT_SCALE_FACTOR=2 netease-cloud-music
 &lt;/code&gt;&lt;/pre&gt;
@@ -32,7 +32,7 @@
 &lt;p&gt;注意其中的 &lt;code&gt;env&lt;/code&gt; 指令。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;当然我们也可以将变量放在 &lt;code&gt;~/.xprofile&lt;/code&gt; 之类的地方，但是鉴于其他程序并没有这样的问题，所以笔者仅修改了相应的桌面文件，避免影响其他软件。&lt;/p&gt;</description>
+&lt;p&gt;当然我们也可以将变量放在 &lt;code&gt;~/.xprofile&lt;/code&gt; 之类的地方，但是鉴于其他程序并没有这样的问题，所以笔者仅修改了相应的桌面快捷方式，避免影响其他软件。&lt;/p&gt;</description>
     </item>
     
     <item>

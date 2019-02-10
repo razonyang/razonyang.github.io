@@ -1,5 +1,5 @@
 ---
-title: "Desktop Entry Set Environment Variables"
+title: "Linux 桌面快捷方式设置环境变量"
 date: 2019-02-10T22:16:33+08:00
 lastmod: 2019-02-10T22:16:33+08:00
 draft: false
@@ -15,7 +15,7 @@ categories: ["development"]
 QT_SCALE_FACTOR=2 netease-cloud-music
 ```
 
-经过尝试，`QT_SCALE_FACTOR` 可以解决问题，于是乎修改相应的桌面文件即可：
+经过尝试，`QT_SCALE_FACTOR` 可以解决问题，于是乎修改相应的桌面快捷方式：
 
 ```
 Exec=env QT_SCALE_FACTOR=2 netease-cloud-music
@@ -23,5 +23,5 @@ Exec=env QT_SCALE_FACTOR=2 netease-cloud-music
 
 > 注意其中的 `env` 指令。
 
-当然我们也可以将变量放在 `~/.xprofile` 之类的地方，但是鉴于其他程序并没有这样的问题，所以笔者仅修改了相应的桌面文件，避免影响其他软件。
+当然我们也可以将变量放在 `~/.xprofile` 之类的地方，但是鉴于其他程序并没有这样的问题，所以笔者仅修改了相应的桌面快捷方式，避免影响其他软件。
 <!--more-->
