@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tk on Error Logs</title>
+    <link>https://errlogs.com/tags/tk/</link>
+    <description>Recent content in Tk on Error Logs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 20 Feb 2019 14:30:18 +0800</lastBuildDate>
+    
+	<atom:link href="https://errlogs.com/tags/tk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>gitk exec: wish: not found</title>
+      <link>https://errlogs.com/post/archlinux/gitk-wish-not-found/</link>
+      <pubDate>Wed, 20 Feb 2019 14:30:18 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/archlinux/gitk-wish-not-found/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;/usr/bin/gitk: line 3: exec: wish: not found.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这是因为 &lt;code&gt;gitk&lt;/code&gt; 依赖 &lt;code&gt;tk&lt;/code&gt; 包，我们需要手动安装依赖：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo pacman -S tk
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

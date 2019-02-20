@@ -6,10 +6,26 @@
     <description>Recent content in Development on Error Logs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 10 Feb 2019 22:16:33 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 20 Feb 2019 14:30:18 +0800</lastBuildDate>
     
 	<atom:link href="https://errlogs.com/categories/development/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>gitk exec: wish: not found</title>
+      <link>https://errlogs.com/post/archlinux/gitk-wish-not-found/</link>
+      <pubDate>Wed, 20 Feb 2019 14:30:18 +0800</pubDate>
+      
+      <guid>https://errlogs.com/post/archlinux/gitk-wish-not-found/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;/usr/bin/gitk: line 3: exec: wish: not found.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这是因为 &lt;code&gt;gitk&lt;/code&gt; 依赖 &lt;code&gt;tk&lt;/code&gt; 包，我们需要手动安装依赖：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo pacman -S tk
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
     
     <item>
       <title>Linux 桌面快捷方式设置环境变量</title>
