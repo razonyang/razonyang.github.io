@@ -65,9 +65,14 @@ $ ./configure \
     --prefix=/usr/local/php72 \
     --enable-maintainer-zts \
     --enable-fpm \
-    --with-gd \
+    --with-gd --with-freetype \
     --enable-pcntl \
-    --with-pdo-mysql
+    --with-pdo-mysql --with-mysqli \
+    --with-mcrypt \
+    --enable-soap \
+    --enable-sockets \
+    --enable-pcntl \
+    --enable-intl
 ```
 
 > 配置期间，会检测系统的依赖，由于笔者 Linux 发行版已安装了自带的 PHP，所有依赖基本都自行解决了，所以无需额外安装其他依赖。
